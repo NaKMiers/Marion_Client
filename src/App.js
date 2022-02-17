@@ -2,15 +2,22 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import routes from './routes'
+import { ThemeProvider } from '@mui/material/styles'
+import theme from './commons/theme'
+import { CssBaseline } from '@mui/material'
 
 function App() {
    return (
       <Router>
-         <Header />
+         <ThemeProvider theme={theme}>
+            <CssBaseline />
 
-         <Switch>{routes}</Switch>
+            <Header />
 
-         {/* <Footer /> */}
+            <Switch>{routes}</Switch>
+
+            <Footer />
+         </ThemeProvider>
       </Router>
    )
 }
