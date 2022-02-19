@@ -5,6 +5,7 @@ import routes from './routes'
 import { ThemeProvider } from '@mui/material/styles'
 import theme from './commons/theme'
 import { CssBaseline } from '@mui/material'
+import { Box } from '@mui/system'
 
 function App() {
    return (
@@ -14,7 +15,9 @@ function App() {
 
             <Header />
 
-            <Switch>{routes}</Switch>
+            <Box style={{ marginTop: 80 }}>
+               <Switch>{routes}</Switch>
+            </Box>
 
             <Footer />
          </ThemeProvider>
