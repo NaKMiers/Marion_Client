@@ -16,6 +16,9 @@ const theme = createTheme({
          lightTextHover: '#aaa',
       },
 
+      info: {
+         main: '#03a9f4',
+      },
       success: {
          main: '#60F579',
       },
@@ -28,7 +31,8 @@ const theme = createTheme({
    },
 
    border: {
-      light: '#ccc',
+      light: '#eee',
+      darker: '#ccc',
       main: '#fff',
    },
 })

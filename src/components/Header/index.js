@@ -32,25 +32,26 @@ import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useStyles from './styles'
+import { Link } from 'react-router-dom'
 
 function Header() {
-   const [checked, setChecked] = useState(false)
-
-   const handleShowNav = () => {
-      setChecked(prev => !prev)
-   }
-
-   const [openAvt, setOpenAvt] = useState(true)
-
-   const handleOpenAvt = () => {
-      setOpenAvt(!openAvt)
-   }
-   const styles = useStyles()
-
+   const [isShowNavModal, setShowNavModal] = useState(false)
+   const [isOpenMenu, setOpenMenu] = useState(true)
    const [anchorElAvt, setAnchorElAvt] = useState(null)
    const [anchorElNotify, setAnchorElNotify] = useState(null)
+   const [scrollPosition, setScrollPosition] = useState()
+   const styles = useStyles()
+
+   const handleShowNav = () => {
+      console.log('handleShowNav')
+      setShowNavModal(prev => !prev)
+   }
+
+   const handleisOpenMenu = () => {
+      setOpenMenu(!isOpenMenu)
+   }
 
    const handleMenuAvt = event => {
       setAnchorElAvt(event.currentTarget)
@@ -67,12 +68,28 @@ function Header() {
       setAnchorElNotify(null)
    }
 
-   console.log('checked: ', checked)
+   const handleScroll = () => {
+      setScrollPosition(window.scrollY)
+   }
+
+   useEffect(() => {
+      document.addEventListener('scroll', handleScroll)
+
+      return () => {
+         document.removeEventListener('scroll', handleScroll)
+      }
+   }, [])
 
    return (
       <AppBar className={styles.header}>
-         <Toolbar className={styles.toolbar}>
-            <Typography className={styles.logo}>Marion</Typography>
+         <Toolbar
+            className={clsx(styles.toolbar, { [styles.tollbarUnscroll]: scrollPosition === 0 })}
+         >
+            <Typography
+               className={clsx(styles.logo, { [styles.logoUnscroll]: scrollPosition === 0 })}
+            >
+               <Link to='/'>Marion</Link>
+            </Typography>
             <Box className={styles.search}>
                <TextField
                   variant='outlined'
@@ -135,9 +152,21 @@ function Header() {
                      <Avatar className={styles.avatar} alt='avatar' src='https://bom.so/EKb8Yx' />
                   </IconButton>
                   <Menu anchorEl={anchorElAvt} open={Boolean(anchorElAvt)} onClose={handleCloseAvt}>
-                     <MenuItem onClick={handleCloseAvt}>My Account</MenuItem>
-                     <MenuItem onClick={handleCloseAvt}>Purchase Order</MenuItem>
-                     <MenuItem onClick={handleCloseAvt}>Wishlist</MenuItem>
+                     <MenuItem onClick={handleCloseAvt}>
+                        <Link to='/my-account' className={styles.link} onClick={handleShowNav}>
+                           My Account
+                        </Link>
+                     </MenuItem>
+                     <MenuItem onClick={handleCloseAvt}>
+                        <Link to='/purchase-order' className={styles.link}>
+                           Purchase Order
+                        </Link>
+                     </MenuItem>
+                     <MenuItem onClick={handleCloseAvt}>
+                        <Link to='/wishlist' className={styles.link}>
+                           Wishlist
+                        </Link>
+                     </MenuItem>
                   </Menu>
                </Box>
 
@@ -147,7 +176,7 @@ function Header() {
                   </IconButton>
                </Box>
 
-               <Box className={clsx(styles.navModal, { [styles.navModalActive]: checked })}>
+               <Box className={clsx(styles.navModal, { [styles.navModalActive]: isShowNavModal })}>
                   <Box className={styles.navWrap}>
                      <Paper className={styles.navPager}>
                         <Box className={styles.navSearch}>
@@ -166,24 +195,44 @@ function Header() {
                         </Box>
 
                         <List className={styles.navList}>
-                           <ListItemButton onClick={handleOpenAvt}>
+                           <ListItemButton onClick={handleisOpenMenu}>
                               <ListItemAvatar>
                                  <Avatar alt='avt' src='https://bom.so/PFCAqg' />
                               </ListItemAvatar>
                               <ListItemText primary='nakmiers' />
-                              {openAvt ? <ExpandLess /> : <ExpandMore />}
+                              {isOpenMenu ? <ExpandLess /> : <ExpandMore />}
                            </ListItemButton>
-                           <Collapse in={openAvt} timeout='auto' unmountOnExit>
+                           <Collapse in={isOpenMenu} timeout='auto' unmountOnExit>
                               <List component='div' disablePadding>
-                                 <ListItemButton className={styles.collapseItem}>
-                                    <ListItemText primary='My Account' />
-                                 </ListItemButton>
-                                 <ListItemButton className={styles.collapseItem}>
-                                    <ListItemText primary='Purchase Order' />
-                                 </ListItemButton>
-                                 <ListItemButton className={styles.collapseItem}>
-                                    <ListItemText primary='Wishlist' />
-                                 </ListItemButton>
+                                 <Link
+                                    to='/my-account'
+                                    className={styles.link}
+                                    onClick={handleShowNav}
+                                 >
+                                    <ListItemButton className={styles.collapseItem}>
+                                       <ListItemText primary='My Account' />
+                                    </ListItemButton>
+                                 </Link>
+
+                                 <Link
+                                    to='/purchase-order'
+                                    className={styles.link}
+                                    onClick={handleShowNav}
+                                 >
+                                    <ListItemButton className={styles.collapseItem}>
+                                       <ListItemText primary='Purchase Order' />
+                                    </ListItemButton>
+                                 </Link>
+
+                                 <Link
+                                    to='/wishlist'
+                                    className={styles.link}
+                                    onClick={handleShowNav}
+                                 >
+                                    <ListItemButton className={styles.collapseItem}>
+                                       <ListItemText primary='Wishlist' />
+                                    </ListItemButton>
+                                 </Link>
                               </List>
                            </Collapse>
 
@@ -208,7 +257,10 @@ function Header() {
                                  rel='noreferrer'
                                  className={styles.link}
                               >
-                                 <FacebookIcon className={styles.footerSocialIcon} />
+                                 <FacebookIcon
+                                    className={styles.footerSocialIcon}
+                                    style={{ color: '#0a82ed' }}
+                                 />
                               </a>
                               <a
                                  href='https://twitter.com/'
@@ -216,7 +268,10 @@ function Header() {
                                  rel='noreferrer'
                                  className={styles.link}
                               >
-                                 <TwitterIcon className={styles.footerSocialIcon} />
+                                 <InstagramIcon
+                                    className={styles.footerSocialIcon}
+                                    style={{ color: '#f5bd5c' }}
+                                 />
                               </a>
                               <a
                                  href='https://www.linkedin.com/'
@@ -224,7 +279,10 @@ function Header() {
                                  rel='noreferrer'
                                  className={styles.link}
                               >
-                                 <LinkedInIcon className={styles.footerSocialIcon} />
+                                 <LinkedInIcon
+                                    className={styles.footerSocialIcon}
+                                    style={{ color: '#0a66c2' }}
+                                 />
                               </a>
                               <a
                                  href='https://www.instagram.com/'
@@ -232,7 +290,10 @@ function Header() {
                                  rel='noreferrer'
                                  className={styles.link}
                               >
-                                 <InstagramIcon className={styles.footerSocialIcon} />
+                                 <PinterestIcon
+                                    className={styles.footerSocialIcon}
+                                    style={{ color: '#e60023' }}
+                                 />
                               </a>
                               <a
                                  href='https://www.youtube.com/'
@@ -240,7 +301,10 @@ function Header() {
                                  rel='noreferrer'
                                  className={styles.link}
                               >
-                                 <YouTubeIcon className={styles.footerSocialIcon} />
+                                 <TwitterIcon
+                                    className={styles.footerSocialIcon}
+                                    style={{ color: '#50abf1' }}
+                                 />
                               </a>
                               <a
                                  href='https://www.pinterest.com/'
@@ -248,7 +312,10 @@ function Header() {
                                  rel='noreferrer'
                                  className={styles.link}
                               >
-                                 <PinterestIcon className={styles.footerSocialIcon} />
+                                 <YouTubeIcon
+                                    className={styles.footerSocialIcon}
+                                    style={{ color: '#ff0000' }}
+                                 />
                               </a>
                            </Box>
                         </List>

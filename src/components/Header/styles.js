@@ -21,7 +21,11 @@ export default makeStyles(theme => ({
       alignItems: 'center',
       justifyContent: 'space-between',
       transition: 'all ease-in-out 0.3s',
+      height: 56,
+   },
+   tollbarUnscroll: {
       height: 80,
+      boxShadow: '0px 0px 0.5px 0.1px #333',
    },
 
    logo: {
@@ -34,7 +38,13 @@ export default makeStyles(theme => ({
          WebkitBackgroundClip: 'text',
          WebkitTextFillColor: 'transparent',
       },
+      transition: 'all ease-in-out 0.3s',
       marginRight: 16,
+   },
+   logoUnscroll: {
+      '&.MuiTypography-root': {
+         transform: 'scale(1.2) translateX(10px)',
+      },
    },
 
    search: {
@@ -200,10 +210,15 @@ export default makeStyles(theme => ({
       cursor: 'pointer',
    },
 
-   link: {
+   socialLink: {
       color: theme.palette.secondary.lightText,
       '&:hover': {
          color: theme.palette.secondary.lightTextHover,
       },
+   },
+
+   link: {
+      color: theme.palette.primary.contrastText,
+      textDecoration: 'none',
    },
 }))

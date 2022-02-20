@@ -15,7 +15,7 @@ function App() {
 
             <Header />
 
-            <Box style={{ marginTop: 80 }}>
+            <Box style={{ marginTop: 80, minHeight: '100vh' }}>
                <Switch>{routes}</Switch>
             </Box>
 

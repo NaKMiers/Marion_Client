@@ -1,8 +1,14 @@
 import { Route } from 'react-router-dom'
 import HomePage from '../pages/HomePage'
 import NotFoundPage from '../pages/NotFoundPage'
+import WishlistPage from '../pages/WishlistPage'
 
 const routes = [
+   {
+      path: '/wishlist',
+      exact: true,
+      component: () => <WishlistPage />,
+   },
    {
       path: '/',
       exact: true,
@@ -10,7 +16,7 @@ const routes = [
    },
    {
       path: '/',
-      exact: true,
+      exact: false,
       component: () => <NotFoundPage />,
    },
 ]
