@@ -21,11 +21,12 @@ export default makeStyles(theme => ({
       alignItems: 'center',
       justifyContent: 'space-between',
       transition: 'all ease-in-out 0.3s',
-      height: 56,
-   },
-   tollbarUnscroll: {
       height: 80,
       boxShadow: '0px 0px 0.5px 0.1px #333',
+   },
+   tollbarScroll: {
+      height: 56,
+      boxShadow: 'none',
    },
 
    logo: {
@@ -37,13 +38,16 @@ export default makeStyles(theme => ({
          background: theme.palette.primary.gradient,
          WebkitBackgroundClip: 'text',
          WebkitTextFillColor: 'transparent',
+         marginRight: 48,
       },
+      transform: 'scale(1.2) translateX(16px)',
       transition: 'all ease-in-out 0.3s',
-      marginRight: 16,
    },
-   logoUnscroll: {
+   logoScroll: {
       '&.MuiTypography-root': {
-         transform: 'scale(1.2) translateX(10px)',
+         transform: 'scale(1)',
+         marginRight: 16,
+         marginLeft: 6,
       },
    },
 
@@ -75,6 +79,11 @@ export default makeStyles(theme => ({
       '&.MuiIconButton-root': {
          margin: '0px 0px 0px 12px',
          padding: 0,
+      },
+   },
+   menuBtn: {
+      '&.MuiButtonBase-root': {
+         marginLeft: 8,
       },
    },
    menuIcon: {

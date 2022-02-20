@@ -80,14 +80,12 @@ function Header() {
       }
    }, [])
 
+   console.log('scrollPosition: ', scrollPosition)
+
    return (
       <AppBar className={styles.header}>
-         <Toolbar
-            className={clsx(styles.toolbar, { [styles.tollbarUnscroll]: scrollPosition === 0 })}
-         >
-            <Typography
-               className={clsx(styles.logo, { [styles.logoUnscroll]: scrollPosition === 0 })}
-            >
+         <Toolbar className={clsx(styles.toolbar, { [styles.tollbarScroll]: scrollPosition })}>
+            <Typography className={clsx(styles.logo, { [styles.logoScroll]: scrollPosition })}>
                <Link to='/'>Marion</Link>
             </Typography>
             <Box className={styles.search}>
@@ -119,6 +117,7 @@ function Header() {
                      open={Boolean(anchorElNotify)}
                      onClose={handleCloseNotify}
                      className={styles.notificationDialog}
+                     style={{ top: scrollPosition === 0 ? 10 : 12 }}
                   >
                      <MenuItem onClick={handleCloseNotify} className={styles.notify}>
                         <CardMedia
@@ -151,7 +150,12 @@ function Header() {
                   <IconButton className={styles.iconAvtBtn} onClick={handleMenuAvt}>
                      <Avatar className={styles.avatar} alt='avatar' src='https://bom.so/EKb8Yx' />
                   </IconButton>
-                  <Menu anchorEl={anchorElAvt} open={Boolean(anchorElAvt)} onClose={handleCloseAvt}>
+                  <Menu
+                     anchorEl={anchorElAvt}
+                     open={Boolean(anchorElAvt)}
+                     onClose={handleCloseAvt}
+                     style={{ top: scrollPosition === 0 ? 10 : 12 }}
+                  >
                      <MenuItem onClick={handleCloseAvt}>
                         <Link to='/my-account' className={styles.link} onClick={handleShowNav}>
                            My Account
@@ -236,20 +240,28 @@ function Header() {
                               </List>
                            </Collapse>
 
-                           <ListItemButton>
-                              <ListItemIcon className={styles.listItemIcon}>
-                                 <NotificationsIcon className={styles.navIcon} />
-                              </ListItemIcon>
-                              <ListItemText primary='Notifications' />
-                              <Box className={styles.count}>6</Box>
-                           </ListItemButton>
-                           <ListItemButton>
-                              <ListItemIcon className={styles.listItemIcon}>
-                                 <ShoppingCartIcon className={styles.navIcon} />
-                              </ListItemIcon>
-                              <ListItemText primary='Cart' />
-                              <Box className={styles.count}>7</Box>
-                           </ListItemButton>
+                           <Link
+                              to='/notifications'
+                              className={styles.link}
+                              onClick={handleShowNav}
+                           >
+                              <ListItemButton>
+                                 <ListItemIcon className={styles.listItemIcon}>
+                                    <NotificationsIcon className={styles.navIcon} />
+                                 </ListItemIcon>
+                                 <ListItemText primary='Notifications' />
+                                 <Box className={styles.count}>6</Box>
+                              </ListItemButton>
+                           </Link>
+                           <Link to='/carts' className={styles.link} onClick={handleShowNav}>
+                              <ListItemButton>
+                                 <ListItemIcon className={styles.listItemIcon}>
+                                    <ShoppingCartIcon className={styles.navIcon} />
+                                 </ListItemIcon>
+                                 <ListItemText primary='Cart' />
+                                 <Box className={styles.count}>7</Box>
+                              </ListItemButton>
+                           </Link>
                            <Box className={styles.footerSocial}>
                               <a
                                  href='https://www.facebook.com/'
