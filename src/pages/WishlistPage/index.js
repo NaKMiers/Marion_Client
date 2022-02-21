@@ -131,7 +131,7 @@ function WishlistPage() {
                         </td>
                      </tr>
                   </tbody>
-                  <thead>
+                  <tbody>
                      <tr className={styles.tableHeader}>
                         <th className={clsx(styles.tableField, styles.priceHeaderRPS)}>PRICE</th>
                         <th className={clsx(styles.tableField, styles.stockStatusHeaderRPS)}>
@@ -139,7 +139,7 @@ function WishlistPage() {
                         </th>
                         <th className={clsx(styles.tableField, styles.emptyHeaderRPS)}></th>
                      </tr>
-                  </thead>
+                  </tbody>
 
                   <tbody>
                      <tr className={styles.tableProducts}>

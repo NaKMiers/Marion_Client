@@ -101,11 +101,13 @@ function Header() {
             </Box>
             <Box className={styles.headerBtnWrap}>
                <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                  <IconButton className={styles.iconBtn}>
-                     <Badge badgeContent={4} color='warning'>
-                        <ShoppingCartIcon />
-                     </Badge>
-                  </IconButton>
+                  <Link to='/carts'>
+                     <IconButton className={styles.iconBtn}>
+                        <Badge badgeContent={4} color='warning'>
+                           <ShoppingCartIcon />
+                        </Badge>
+                     </IconButton>
+                  </Link>
 
                   <IconButton className={styles.iconBtn} onClick={handleMenuNotify}>
                      <Badge badgeContent={17} color='error'>

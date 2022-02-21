@@ -37,23 +37,22 @@ export default makeStyles(theme => ({
          background: theme.palette.primary.gradient,
          WebkitBackgroundClip: 'text',
          WebkitTextFillColor: 'transparent',
-         marginRight: 16,
+         marginRight: 12,
       },
-      // transform: 'scale(1.2)',
       transition: 'all ease-in-out 0.3s',
    },
    logoScroll: {
       '&.MuiTypography-root': {
          transform: 'scale(0.8) translateX(-20px)',
-         '@media (max-width: 900px)': {
-            marginRight: -16,
-         },
       },
    },
 
    search: {
       flexGrow: 1,
       maxWidth: 500,
+      '@media (max-width: 900px)': {
+         display: 'none',
+      },
    },
    searchTextfiled: {
       width: '100%',
