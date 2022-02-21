@@ -33,20 +33,21 @@ export default makeStyles(theme => ({
          whiteSpace: 'nowrap',
          textAlign: 'center',
          fontWeight: 'bold',
-         fontSize: 40,
+         fontSize: 48,
          background: theme.palette.primary.gradient,
          WebkitBackgroundClip: 'text',
          WebkitTextFillColor: 'transparent',
-         marginRight: 48,
+         marginRight: 16,
       },
-      transform: 'scale(1.2) translateX(16px)',
+      // transform: 'scale(1.2)',
       transition: 'all ease-in-out 0.3s',
    },
    logoScroll: {
       '&.MuiTypography-root': {
-         transform: 'scale(1)',
-         marginRight: 16,
-         marginLeft: 6,
+         transform: 'scale(0.8) translateX(-20px)',
+         '@media (max-width: 900px)': {
+            marginRight: -16,
+         },
       },
    },
 

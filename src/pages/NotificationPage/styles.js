@@ -19,6 +19,11 @@ export default makeStyles(theme => ({
          fontSize: 48,
       },
       padding: '24px 28px',
+      '@media (max-width: 600px)': {
+         '&.MuiTypography-root': {
+            fontSize: '8vw',
+         },
+      },
    },
    title1: {
       fontWeight: 'bold',
@@ -65,28 +70,35 @@ export default makeStyles(theme => ({
 
    notificationBody: {
       padding: '24px 36px',
+      margin: 'auto',
+      minWidth: 280,
    },
 
    notificationList: {
-      // border: `1px solid #ccc`,
+      border: `1px solid #ccc`,
+      '&.MuiList-root': {
+         padding: 0,
+      },
    },
    headingList: {
       textAlign: 'right',
-      padding: '0px 16px',
+      padding: '8px 16px',
+      borderBottom: '1px solid #ccc',
    },
    markReaded: {
       display: 'inline-block',
-      color: theme.palette.secondary.lightText,
+      color: theme.palette.info.main,
       cursor: 'pointer',
       '&.MuiTypography-root': {
          marginRight: -22,
          transition: 'all 0.1s ease-in-out',
       },
       '&:hover': {
-         color: theme.palette.secondary.lightTextHover,
+         color: theme.palette.secondary.lightText,
       },
    },
    markReadedActive: {
+      color: theme.palette.secondary.lightText,
       '&.MuiTypography-root': {
          marginRight: 0,
       },
@@ -105,33 +117,54 @@ export default makeStyles(theme => ({
       opacity: 1,
    },
 
-   notify: {},
+   notify: {
+      marginBottom: 16,
+      '&.MuiListItemButton-root': {
+         padding: '16px 16px',
+      },
+   },
    notifyThumbWrap: {
-      width: 70,
+      minWidth: 75,
+      width: 75,
+      minHeight: 75,
+      height: 75,
    },
    notifyThumb: {
       width: '100%',
+      height: '100%',
    },
 
    notifyContent: {
-      display: 'flex',
-      flexDirection: 'column',
-      height: 70,
-      '&.MuiListItemButton-root': {
-         alignItems: 'flex-start',
-         padding: '0px 0px 0px 12px',
-      },
+      width: 'auto',
+      height: 80,
+      marginLeft: 16,
+      overflow: 'scroll',
    },
    notifyTitle: {
       '&.MuiTypography-root': {
          fontSize: 20,
       },
    },
-   notifyDesc: {},
+   notifyDesc: {
+      '&.MuiTypography-root': {
+         fontFamily: 'Montserrat, sans-serif',
+         fontWeight: 'bold',
+         fontSize: 15,
+      },
+   },
+   removeBtn: {
+      position: 'absolute',
+      top: 10,
+      right: 12,
+      cursor: 'pointer',
+   },
    removeIcon: {
       '&.MuiSvgIcon-root': {
-         fontSize: 32,
-         color: theme.palette.danger.main,
+         fontSize: 20,
+         color: theme.palette.secondary.lightTextHover,
+      },
+      '&:hover': {
+         color: theme.palette.primary.dark,
       },
    },
 }))

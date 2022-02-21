@@ -20,6 +20,11 @@ export default makeStyles(theme => ({
          fontSize: 48,
       },
       padding: '24px 28px',
+      '@media (max-width: 600px)': {
+         '&.MuiTypography-root': {
+            fontSize: '8vw',
+         },
+      },
    },
    title1: {
       fontWeight: 'bold',

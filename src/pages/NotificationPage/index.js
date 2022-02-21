@@ -1,16 +1,8 @@
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
+import ClearIcon from '@mui/icons-material/Clear'
 import DoneIcon from '@mui/icons-material/Done'
-import RemoveIcon from '@mui/icons-material/HighlightOff'
 import NotificationsIcon from '@mui/icons-material/Notifications'
-import {
-   Box,
-   CardMedia,
-   IconButton,
-   List,
-   ListItem,
-   ListItemButton,
-   Typography,
-} from '@mui/material'
+import { Box, CardMedia, List, ListItemButton, Typography } from '@mui/material'
 import clsx from 'clsx'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -54,7 +46,7 @@ function NotificationPage() {
                      })}
                   />
                </Box>
-               <ListItem className={styles.notify}>
+               <ListItemButton className={styles.notify}>
                   <Box className={styles.notifyThumbWrap}>
                      <CardMedia
                         alt='thumb'
@@ -63,17 +55,18 @@ function NotificationPage() {
                         className={styles.notifyThumb}
                      />
                   </Box>
-                  <ListItemButton className={styles.notifyContent}>
+                  <Box className={styles.notifyContent}>
                      <Typography className={styles.notifyTitle}>Summer BBQ</Typography>
                      <Typography className={styles.notifyDesc}>
-                        Wish I could come, but I'm out of town this…
+                        Wish I could come, but I'm out of town this Wish I could come, but I'm out
+                        Wish I could come, but I'm out of town this of town this
                      </Typography>
-                  </ListItemButton>
-                  <IconButton>
-                     <RemoveIcon className={styles.removeIcon} />
-                  </IconButton>
-               </ListItem>
-               <ListItem className={styles.notify}>
+                  </Box>
+                  <Box className={styles.removeBtn}>
+                     <ClearIcon className={styles.removeIcon} />
+                  </Box>
+               </ListItemButton>
+               <ListItemButton className={styles.notify}>
                   <Box className={styles.notifyThumbWrap}>
                      <CardMedia
                         alt='thumb'
@@ -82,16 +75,16 @@ function NotificationPage() {
                         className={styles.notifyThumb}
                      />
                   </Box>
-                  <ListItemButton className={styles.notifyContent}>
+                  <Box className={styles.notifyContent}>
                      <Typography className={styles.notifyTitle}>Summer BBQ</Typography>
                      <Typography className={styles.notifyDesc}>
                         Wish I could come, but I'm out of town this…
                      </Typography>
-                  </ListItemButton>
-                  <IconButton>
-                     <RemoveIcon className={styles.removeIcon} />
-                  </IconButton>
-               </ListItem>
+                  </Box>
+                  <Box className={styles.removeBtn}>
+                     <ClearIcon className={styles.removeIcon} />
+                  </Box>
+               </ListItemButton>
             </List>
          </Box>
       </Box>
