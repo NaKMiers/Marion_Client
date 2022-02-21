@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles'
 export default makeStyles(theme => ({
    wishlistPage: {
       margin: 'auto',
-      maxWidth: 1212,
+      maxWidth: 1200,
    },
 
    pageTitle: {

@@ -22,11 +22,10 @@ export default makeStyles(theme => ({
       justifyContent: 'space-between',
       transition: 'all ease-in-out 0.3s',
       height: 80,
-      boxShadow: '0px 0px 0.5px 0.1px #333',
    },
    tollbarScroll: {
       height: 56,
-      boxShadow: 'none',
+      boxShadow: '0px 0px 0.5px 0.1px #333',
    },
 
    logo: {
