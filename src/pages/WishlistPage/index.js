@@ -12,6 +12,7 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import RemoveIcon from '@mui/icons-material/HighlightOff'
+import InfoIcon from '@mui/icons-material/Info'
 import clsx from 'clsx'
 
 function WishlistPage() {
@@ -219,6 +220,20 @@ function WishlistPage() {
                      <YouTubeIcon className={styles.socialIcon} style={{ color: '#ff0000' }} />
                   </a>
                </Box>
+            </Box>
+
+            <Box className={styles.emptyWishlistWrap}>
+               <Box className={styles.emptyWishlist}>
+                  <Box className={styles.emptyWishlistIconStroke}>
+                     <InfoIcon className={styles.emptyWishlistIcon} />
+                  </Box>
+                  <Typography className={styles.emptyText}>
+                     Your wishlist is currently empty.
+                  </Typography>
+               </Box>
+               <Link to='/' className={styles.returnShopLink}>
+                  Return to shop
+               </Link>
             </Box>
          </Box>
       </Box>

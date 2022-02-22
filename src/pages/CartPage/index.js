@@ -3,6 +3,7 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import RemoveIcon from '@mui/icons-material/HighlightOff'
 import MinusIcon from '@mui/icons-material/Remove'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import InfoIcon from '@mui/icons-material/Info'
 import { Box, Button, IconButton, Typography } from '@mui/material'
 import clsx from 'clsx'
 import { Link } from 'react-router-dom'
@@ -165,6 +166,20 @@ function CartPage() {
                      </tr>
                   </tbody>
                </table>
+            </Box>
+
+            <Box className={styles.emptyCartWrap}>
+               <Box className={styles.emptyCart}>
+                  <Box className={styles.emptyCartIconStroke}>
+                     <InfoIcon className={styles.emptyCartIcon} />
+                  </Box>
+                  <Typography className={styles.emptyText}>
+                     Your cart is currently empty.
+                  </Typography>
+               </Box>
+               <Link to='/' className={styles.returnShopLink}>
+                  Return to shop
+               </Link>
             </Box>
          </Box>
       </Box>

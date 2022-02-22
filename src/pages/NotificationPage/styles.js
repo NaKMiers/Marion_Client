@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles'
 export default makeStyles(theme => ({
    notificationPage: {
       margin: 'auto',
-      maxWidth: 1200,
+      maxWidth: 1500,
    },
    pageTitle: {
       position: 'relative',

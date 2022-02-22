@@ -1,23 +1,21 @@
+import { Box, Button } from '@mui/material'
+import AdjustIcon from '@mui/icons-material/Adjust'
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord'
 import useStyles from './styles'
 
 function HomePage() {
    const styles = useStyles()
 
    return (
-      <div className={styles.homePage}>
-         <div>
-            This is Homepage This is Homepage This is Homepage This is Homepage This is Homepage
-            This is Homepage This is Homepage This is Homepage This is Homepage This is Homepage
-            This is Homepage This is Homepage This is Homepage This is Homepage This is Homepage
-            This is Homepage This is Homepage This is Homepage This is Homepage This is Homepage
-            This is Homepage This is Homepage This is Homepage This is Homepage This is Homepage
-            This is Homepage This is Homepage This is Homepage This is Homepage This is Homepage
-            This is Homepage This is Homepage This is Homepage This is Homepage This is Homepage
-            This is Homepage This is Homepage This is Homepage This is Homepage This is Homepage
-            This is Homepage This is Homepage This is Homepage This is Homepage This is Homepage
-            <button>Button</button>
-         </div>
-      </div>
+      <Box className={styles.homePage}>
+         <Box className={styles.slider}>
+            <Box className={styles.slide1}></Box>
+            {/* <Box className={styles.slideNumber}>
+               <AdjustIcon />
+               <FiberManualRecordIcon />
+            </Box> */}
+         </Box>
+      </Box>
    )
 }
 
