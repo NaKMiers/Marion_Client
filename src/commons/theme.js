@@ -14,6 +14,7 @@ const theme = createTheme({
          contrastText: '#fff',
          lightText: '#ccc',
          lightTextHover: '#aaa',
+         darkerText: '#5f727f',
       },
 
       info: {
