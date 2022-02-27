@@ -8,10 +8,11 @@ export default makeStyles(theme => ({
 
    slider: {
       position: 'relative',
+      height: '45vw',
+      maxHeight: 675,
    },
 
    // SLIDE 1
-
    slide1: {
       position: 'absolute',
       width: '100%',
@@ -103,7 +104,7 @@ export default makeStyles(theme => ({
 
    productName1: {
       position: 'absolute',
-      top: '41%',
+      top: '38%',
       right: '3%',
       '&.MuiTypography-root': {
          fontSize: 38,
@@ -130,7 +131,7 @@ export default makeStyles(theme => ({
          opacity: 1,
       },
       '100%': {
-         top: '41%',
+         top: '38%',
       },
    },
    '@keyframes productName1OutEffect': {
@@ -138,7 +139,7 @@ export default makeStyles(theme => ({
          opacity: 1,
       },
       '50%': {
-         top: '41%',
+         top: '38%',
          opacity: 1,
       },
       '80%': {
@@ -152,7 +153,7 @@ export default makeStyles(theme => ({
 
    price1: {
       position: 'absolute',
-      top: '52%',
+      top: '48%',
       right: '3%',
       '&.MuiTypography-root': {
          fontFamily: 'Montserrat, sans-serif',
@@ -180,7 +181,7 @@ export default makeStyles(theme => ({
          opacity: 1,
       },
       '100%': {
-         top: '52%',
+         top: '48%',
       },
    },
    '@keyframes price1OutEffect': {
@@ -188,7 +189,7 @@ export default makeStyles(theme => ({
          opacity: 1,
       },
       '50%': {
-         top: '52%',
+         top: '48%',
          opacity: 1,
       },
       '80%': {
@@ -251,7 +252,6 @@ export default makeStyles(theme => ({
    },
 
    // SLIDE 2
-
    slide2: {
       position: 'absolute',
       width: '100%',
@@ -312,38 +312,32 @@ export default makeStyles(theme => ({
    '@keyframes designStyles2Effect': {
       '0%': {
          opacity: 0,
+         left: '-50%',
       },
-      '50%': {
-         top: '60%',
-         opacity: 0,
-      },
-      '80%': {
+      '60%': {
          opacity: 1,
       },
       '100%': {
-         top: '36%',
+         left: '3%',
       },
    },
    '@keyframes designStyles2OutEffect': {
       '0%': {
          opacity: 1,
+         left: '3%',
       },
-      '50%': {
-         top: '36%',
-         opacity: 1,
-      },
-      '80%': {
+      '60%': {
          opacity: 0,
       },
       '100%': {
-         top: '60%',
+         left: '-50%',
          opacity: 0,
       },
    },
 
    productName2: {
       position: 'absolute',
-      top: '41%',
+      top: '38%',
       left: '3%',
       '&.MuiTypography-root': {
          fontSize: 38,
@@ -361,38 +355,32 @@ export default makeStyles(theme => ({
    '@keyframes productName2Effect': {
       '0%': {
          opacity: 0,
+         left: '-50%',
       },
-      '50%': {
-         top: '65%',
-         opacity: 0,
-      },
-      '80%': {
+      '60%': {
          opacity: 1,
       },
       '100%': {
-         top: '41%',
+         left: '3%',
       },
    },
    '@keyframes productName2OutEffect': {
       '0%': {
          opacity: 1,
+         left: '3%',
       },
-      '50%': {
-         top: '41%',
-         opacity: 1,
-      },
-      '80%': {
+      '60%': {
          opacity: 0,
       },
       '100%': {
-         top: '65%',
+         left: '-50%',
          opacity: 0,
       },
    },
 
    price2: {
       position: 'absolute',
-      top: '52%',
+      top: '48%',
       left: '3%',
       '&.MuiTypography-root': {
          fontFamily: 'Montserrat, sans-serif',
@@ -411,31 +399,25 @@ export default makeStyles(theme => ({
    '@keyframes price2Effect': {
       '0%': {
          opacity: 0,
+         left: '-50%',
       },
-      '50%': {
-         top: '78%',
-         opacity: 0,
-      },
-      '80%': {
+      '60%': {
          opacity: 1,
       },
       '100%': {
-         top: '52%',
+         left: '3%',
       },
    },
    '@keyframes price2OutEffect': {
       '0%': {
          opacity: 1,
+         left: '3%',
       },
-      '50%': {
-         top: '52%',
-         opacity: 1,
-      },
-      '80%': {
+      '60%': {
          opacity: 0,
       },
       '100%': {
-         top: '78%',
+         left: '-50%',
          opacity: 0,
       },
    },
@@ -461,31 +443,25 @@ export default makeStyles(theme => ({
    '@keyframes type2Effect': {
       '0%': {
          opacity: 0,
+         left: '-50%',
       },
-      '50%': {
-         top: '83%',
-         opacity: 0,
-      },
-      '80%': {
+      '60%': {
          opacity: 1,
       },
       '100%': {
-         top: '63%',
+         left: '3%',
       },
    },
    '@keyframes type2OutEffect': {
       '0%': {
          opacity: 1,
+         left: '3%',
       },
-      '50%': {
-         top: '63%',
-         opacity: 1,
-      },
-      '80%': {
+      '60%': {
          opacity: 0,
       },
       '100%': {
-         top: '83%',
+         left: '-50%',
          opacity: 0,
       },
    },
@@ -522,5 +498,54 @@ export default makeStyles(theme => ({
    },
    subSLiderNumberActive: {
       opacity: 1,
+   },
+
+   // SIDEBAR
+   sidebar: {},
+   sidebarBody: {
+      width: '35vw',
+   },
+   search: {},
+   filterByCategories: {},
+   filterByColor: {},
+   filterByBrand: {},
+   filterByPrice: {},
+   filterByStatus: {},
+
+   // PRODUCTIONS
+   productions: {
+      padding: '0px 16px',
+   },
+   topPanelRow: {
+      display: 'flex',
+      justifyContent: 'space-between',
+   },
+   filterBtn: {
+      '&.MuiButton-root': {
+         color: theme.palette.secondary.darkerText,
+         border: `1px solid ${theme.border.light}`,
+         padding: '0px 8px',
+      },
+   },
+   filterIcon: {
+      '&.MuiSvgIcon-root': {
+         fontSize: 20,
+      },
+      marginTop: -2,
+      marginRight: 4,
+   },
+   sortBtn: {
+      '&.MuiButton-root': {
+         color: theme.palette.secondary.darkerText,
+         border: `1px solid ${theme.border.light}`,
+         padding: '0px 8px',
+      },
+   },
+   sortIcon: {
+      '&.MuiSvgIcon-root': {
+         fontSize: 24,
+      },
+      // marginTop: -5.5,
+      marginLeft: 4,
    },
 }))
