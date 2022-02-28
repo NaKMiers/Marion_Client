@@ -503,14 +503,164 @@ export default makeStyles(theme => ({
    // SIDEBAR
    sidebar: {},
    sidebarBody: {
+      padding: 16,
+      height: 2000,
       width: '35vw',
+      overflow: 'scroll',
+      '@media (max-width: 900px)': {
+         width: '45vw',
+      },
+      '@media (max-width: 600px)': {
+         width: '65vw',
+      },
    },
-   search: {},
-   filterByCategories: {},
-   filterByColor: {},
-   filterByBrand: {},
-   filterByPrice: {},
-   filterByStatus: {},
+
+   search: {
+      padding: '0px 24px 32px 24px',
+      '&.MuiOutlinedInput-root': {
+         borderRadius: 17,
+      },
+   },
+   sidebarHeading: {
+      '&.MuiTypography-root': {
+         fontSize: 36,
+         fontWeight: 'lighter',
+         margin: '0px 0px 20px 0px !important',
+         fontFamily: 'Montserrat, sans-serif !important',
+      },
+   },
+   searchTextfield: {
+      width: '100%',
+      background: theme.palette.primary.light,
+      '&.MuiOutlinedInput-root': {
+         borderRadius: 16,
+      },
+      '& .MuiOutlinedInput-notchedOutline': {
+         border: 'none',
+      },
+      '& .MuiOutlinedInput-input': {
+         padding: '6px 14px',
+         border: 'none',
+         outline: 'none',
+         fontSize: 15,
+      },
+   },
+   searchInput: {},
+   searchIcon: {
+      cursor: 'pointer',
+   },
+   subHeading: {
+      '&.MuiTypography-root': {
+         fontSize: 18,
+         fontFamily: 'Montserrat, sans-serif !important',
+         fontWeight: 'bold',
+      },
+   },
+
+   filterByCategories: {
+      padding: '2px 24px 16px 24px',
+   },
+   filterByCtgList: {
+      '&.MuiList-root': {
+         padding: 0,
+      },
+   },
+   filterByCtgItem: {
+      color: theme.palette.secondary.darkerText,
+      cursor: 'pointer',
+      transition: 'all 0.2s ease-in-out',
+      '&.MuiListItem-root': {
+         padding: 0,
+      },
+      '&:hover': {
+         color: theme.palette.info.main,
+         '& $filterByCtgCount': {
+            color: theme.palette.primary.main,
+            background: theme.palette.info.main,
+         },
+         '& $colorBorder': {
+            border: `2px solid ${theme.palette.info.main}`,
+         },
+      },
+   },
+   filterByCtgSubItem: {
+      '& .MuiTypography-root': {
+         fontSize: 15,
+      },
+      '&.MuiListItem-root': {
+         padding: '2px 0px',
+      },
+   },
+   count: {
+      width: 26,
+      height: 20,
+      fontSize: 12,
+      lineHeight: '20px',
+      textAlign: 'center',
+      background: theme.palette.primary.light,
+      borderRadius: 10,
+   },
+
+   filterByColor: {
+      padding: '2px 24px 16px 24px',
+   },
+   color: {
+      width: 22,
+      height: 22,
+      borderRadius: '50%',
+      position: 'relative',
+   },
+   colorBorder: {
+      position: 'absolute',
+      width: 30,
+      height: 30,
+      background: 'transparent',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      borderRadius: '50%',
+      border: `2px solid ${theme.border.light}`,
+   },
+   listItemText: {
+      marginLeft: 12,
+   },
+
+   filterByBrand: {
+      padding: '2px 24px 16px 24px',
+   },
+
+   filterByPrice: {
+      padding: '2px 24px 16px 24px',
+   },
+   priceRange: {
+      '&.MuiSlider-root': {
+         color: theme.palette.info.main,
+      },
+   },
+
+   filterByStatus: {
+      padding: '2px 24px 16px 24px',
+   },
+
+   filterTotal: {
+      padding: '28px 24px',
+   },
+   selectedFilterItem: {
+      display: 'inline-block',
+      marginRight: 8,
+      background: theme.palette.primary.light,
+      borderRadius: 20,
+      padding: '2px 10px',
+      fontSize: 14,
+      color: theme.palette.secondary.darkerText,
+   },
+   clearBtn: {
+      cursor: 'pointer',
+   },
+   deleteSelectedFilterItemBtn: {
+      cursor: 'pointer',
+      marginLeft: 2,
+   },
 
    // PRODUCTIONS
    productions: {

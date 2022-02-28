@@ -1,17 +1,14 @@
 import EqualizerIcon from '@mui/icons-material/Equalizer'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import VisibilityIcon from '@mui/icons-material/Visibility'
+import SearchIcon from '@mui/icons-material/Search'
 import {
    Box,
    Button,
-   Checkbox,
    Divider,
    Drawer,
-   IconButton,
    InputAdornment,
+   List,
    ListItem,
-   ListItemButton,
-   ListItemIcon,
    ListItemText,
    Menu,
    MenuItem,
@@ -25,6 +22,12 @@ import useStyles from './styles'
 
 function HomePage() {
    console.log('HomePage')
+
+   const [value, setValue] = useState([20, 37])
+
+   const handleChange = (event, newValue) => {
+      setValue(newValue)
+   }
 
    const [anchorEl, setAnchorEl] = useState(null)
    const isOpenSort = Boolean(anchorEl)
@@ -165,15 +168,15 @@ function HomePage() {
          >
             <Box className={styles.sidebarBody}>
                <Box className={styles.search}>
-                  <Typography>Filter</Typography>
+                  <Typography className={styles.sidebarHeading}>Filter</Typography>
                   <OutlinedInput
+                     className={styles.searchTextfield}
                      id='outlined-adornment-password'
                      type='text'
+                     placeholder='Search by product...'
                      endAdornment={
                         <InputAdornment position='end'>
-                           <IconButton aria-label='toggle password visibility' edge='end'>
-                              <VisibilityIcon />
-                           </IconButton>
+                           <SearchIcon className={styles.searchIcon} />
                         </InputAdornment>
                      }
                      label='Password'
@@ -182,95 +185,218 @@ function HomePage() {
                <Divider light />
 
                <Box className={styles.filterByCategories}>
-                  <Typography>Filter By Categories</Typography>
-                  <ListItem
-                     secondaryAction={
-                        <IconButton edge='end' aria-label='comments'>
-                           <VisibilityIcon />
-                        </IconButton>
-                     }
-                     disablePadding
-                  >
-                     <ListItemButton
-                        role={undefined}
+                  <Typography className={styles.subHeading}>Filter By Categories</Typography>
+                  <List className={styles.filterByCtgList}>
+                     <ListItem
+                        className={styles.filterByCtgItem}
                         // onClick={handleToggle(value)}
-                        dense
                      >
-                        <ListItemIcon>
-                           <Checkbox
-                              edge='start'
-                              // checked={checked.indexOf(value) !== -1}
-                              tabIndex={-1}
-                              disableRipple
-                           />
-                        </ListItemIcon>
-                        <ListItemText primary='Line item' />
-                     </ListItemButton>
-                  </ListItem>
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <ListItemText primary='Show All' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                        // onClick={handleToggle(value)}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <ListItemText primary='Accessories' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                        // onClick={handleToggle(value)}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <ListItemText primary='Chairs' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                        // onClick={handleToggle(value)}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <ListItemText primary='Lamps' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                        // onClick={handleToggle(value)}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <ListItemText primary='Vases' />
+                        </ListItem>
+                     </ListItem>
+                  </List>
                </Box>
                <Divider light />
 
                <Box className={styles.filterByColor}>
-                  <Typography>Filter By Color</Typography>
-                  <ListItem
-                     secondaryAction={
-                        <IconButton edge='end' aria-label='comments'>
-                           <VisibilityIcon />
-                        </IconButton>
-                     }
-                     disablePadding
-                  >
-                     <ListItemButton
-                        role={undefined}
-                        // onClick={handleToggle(value)}
-                        dense
+                  <Typography className={styles.subHeading}>Filter By Color</Typography>
+                  <List className={styles.filterByCtgList}>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
                      >
-                        <ListItemIcon>
-                           <Checkbox
-                              edge='start'
-                              // checked={checked.indexOf(value) !== -1}
-                              tabIndex={-1}
-                              disableRipple
-                           />
-                        </ListItemIcon>
-                        <ListItemText primary='Line item' />
-                     </ListItemButton>
-                  </ListItem>
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <Box className={styles.color} style={{ background: '#000' }}>
+                              <Box className={styles.colorBorder} />
+                           </Box>
+                           <ListItemText className={styles.listItemText} primary='Black' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <Box className={styles.color} style={{ background: '#4c83ff' }}>
+                              <Box className={styles.colorBorder} />
+                           </Box>
+                           <ListItemText className={styles.listItemText} primary='Blue' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <Box className={styles.color} style={{ background: '#e5aa70' }}>
+                              <Box className={styles.colorBorder} />
+                           </Box>
+                           <ListItemText className={styles.listItemText} primary='Fawn' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <Box className={styles.color} style={{ background: '#c0cdd0' }}>
+                              <Box className={styles.colorBorder} />
+                           </Box>
+                           <ListItemText className={styles.listItemText} primary='Gray' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <Box className={styles.color} style={{ background: '#99e666' }}>
+                              <Box className={styles.colorBorder} />
+                           </Box>
+                           <ListItemText className={styles.listItemText} primary='Green' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <Box className={styles.color} style={{ background: '#f0efe9' }}>
+                              <Box className={styles.colorBorder} />
+                           </Box>
+                           <ListItemText className={styles.listItemText} primary='Milky' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <Box className={styles.color} style={{ background: '#ff9833' }}>
+                              <Box className={styles.colorBorder} />
+                           </Box>
+                           <ListItemText className={styles.listItemText} primary='Orange' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <Box className={styles.color} style={{ background: '#f44336' }}>
+                              <Box className={styles.colorBorder} />
+                           </Box>
+                           <ListItemText className={styles.listItemText} primary='Red' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <Box className={styles.color} style={{ background: '#30d5c8' }}>
+                              <Box className={styles.colorBorder} />
+                           </Box>
+                           <ListItemText className={styles.listItemText} primary='Turquoise' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                     >
+                        <ListItem className={styles.filterByCtgSubItem}>
+                           <Box className={styles.color} style={{ background: '#8a6bec' }}>
+                              <Box className={styles.colorBorder} />
+                           </Box>
+                           <ListItemText className={styles.listItemText} primary='Violet' />
+                        </ListItem>
+                     </ListItem>
+                  </List>
                </Box>
                <Divider light />
 
                <Box className={styles.filterByBrand}>
-                  <Typography>Filter By Brand</Typography>
-                  <ListItem
-                     secondaryAction={
-                        <IconButton edge='end' aria-label='comments'>
-                           <VisibilityIcon />
-                        </IconButton>
-                     }
-                     disablePadding
-                  >
-                     <ListItemButton
-                        role={undefined}
+                  <Typography className={styles.subHeading}>Filter By Brand</Typography>
+                  <List className={styles.filterByCtgList}>
+                     <ListItem
+                        className={styles.filterByCtgItem}
                         // onClick={handleToggle(value)}
-                        dense
                      >
-                        <ListItemIcon>
-                           <Checkbox
-                              edge='start'
-                              // checked={checked.indexOf(value) !== -1}
-                              tabIndex={-1}
-                              disableRipple
-                           />
-                        </ListItemIcon>
-                        <ListItemText primary='Line item' />
-                     </ListItemButton>
-                  </ListItem>
+                        <ListItem>
+                           <ListItemText primary='Show All' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                        // onClick={handleToggle(value)}
+                     >
+                        <ListItem>
+                           <ListItemText primary='Extravaganza' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                        // onClick={handleToggle(value)}
+                     >
+                        <ListItem>
+                           <ListItemText primary='Testcat' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                        // onClick={handleToggle(value)}
+                     >
+                        <ListItem>
+                           <ListItemText primary='Via Bottelli' />
+                        </ListItem>
+                     </ListItem>
+                  </List>
                </Box>
                <Divider light />
 
                <Box className={styles.filterByPrice}>
-                  <Typography>Filter By Price</Typography>
-                  <Slider disabled defaultValue={30} aria-label='Disabled slider' />
+                  <Typography className={styles.subHeading}>Filter By Price</Typography>
+                  <Slider value={value} onChange={handleChange} className={styles.priceRange} />
                   <p>
                      Price: ${35} - ${99}
                   </p>
@@ -278,33 +404,47 @@ function HomePage() {
                <Divider light />
 
                <Box className={styles.filterByStatus}>
-                  <Typography>Filter By Status</Typography>
-                  <ListItem
-                     secondaryAction={
-                        <IconButton edge='end' aria-label='comments'>
-                           <VisibilityIcon />
-                        </IconButton>
-                     }
-                     disablePadding
-                  >
-                     <ListItemButton
-                        role={undefined}
+                  <Typography className={styles.subHeading}>Filter By Status</Typography>
+                  <List className={styles.filterByCtgList}>
+                     <ListItem
+                        className={styles.filterByCtgItem}
                         // onClick={handleToggle(value)}
-                        dense
                      >
-                        <ListItemIcon>
-                           <Checkbox
-                              edge='start'
-                              // checked={checked.indexOf(value) !== -1}
-                              tabIndex={-1}
-                              disableRipple
-                           />
-                        </ListItemIcon>
-                        <ListItemText primary='Line item' />
-                     </ListItemButton>
-                  </ListItem>
+                        <ListItem>
+                           <ListItemText primary='Show All' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                        // onClick={handleToggle(value)}
+                     >
+                        <ListItem>
+                           <ListItemText primary='On Sale' />
+                        </ListItem>
+                     </ListItem>
+                     <ListItem
+                        className={styles.filterByCtgItem}
+                        secondaryAction={<Box className={styles.count}>30</Box>}
+                        // onClick={handleToggle(value)}
+                     >
+                        <ListItem>
+                           <ListItemText primary='In Stock' />
+                        </ListItem>
+                     </ListItem>
+                  </List>
                </Box>
                <Divider light />
+
+               <Box className={styles.filterTotal}>
+                  <Box className={clsx(styles.selectedFilterItem, styles.clearBtn)}>
+                     Clear Filters
+                  </Box>
+                  <Box className={styles.selectedFilterItem}>
+                     ${35} - ${99}{' '}
+                     <span className={styles.deleteSelectedFilterItemBtn}>&times;</span>
+                  </Box>
+               </Box>
             </Box>
          </Drawer>
 
