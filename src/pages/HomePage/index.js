@@ -6,6 +6,7 @@ import {
    Button,
    Divider,
    Drawer,
+   Grid,
    InputAdornment,
    List,
    ListItem,
@@ -448,7 +449,7 @@ function HomePage() {
             </Box>
          </Drawer>
 
-         <Box className={styles.productions}>
+         <Box className={styles.main}>
             <Box className={styles.topPanelRow}>
                <Button className={styles.filterBtn} onClick={toggleDrawer('left', true)}>
                   <EqualizerIcon className={styles.filterIcon} /> Filters
@@ -457,6 +458,7 @@ function HomePage() {
                   Default Sorting <KeyboardArrowDownIcon className={styles.sortIcon} />
                </Button>
                <Menu
+                  className={styles.sortMenu}
                   id='basic-menu'
                   anchorEl={anchorEl}
                   open={isOpenSort}
@@ -465,14 +467,37 @@ function HomePage() {
                      'aria-labelledby': 'basic-button',
                   }}
                >
-                  <MenuItem onClick={handleCloseSort}>Default sorting</MenuItem>
-                  <MenuItem onClick={handleCloseSort}>Sort by latest</MenuItem>
-                  <MenuItem onClick={handleCloseSort}>Sort by popularity</MenuItem>
-                  <MenuItem onClick={handleCloseSort}>Sort by price: low to hight</MenuItem>
-                  <MenuItem onClick={handleCloseSort}>Sort by price: hight to low</MenuItem>
-                  <MenuItem onClick={handleCloseSort}></MenuItem>
+                  <MenuItem className={styles.sortItem} onClick={handleCloseSort}>
+                     Default sorting
+                  </MenuItem>
+                  <MenuItem className={styles.sortItem} onClick={handleCloseSort}>
+                     Sort by latest
+                  </MenuItem>
+                  <MenuItem className={styles.sortItem} onClick={handleCloseSort}>
+                     Sort by popularity
+                  </MenuItem>
+                  <MenuItem className={styles.sortItem} onClick={handleCloseSort}>
+                     Sort by price: low to hight
+                  </MenuItem>
+                  <MenuItem className={styles.sortItem} onClick={handleCloseSort}>
+                     Sort by price: hight to low
+                  </MenuItem>
                </Menu>
             </Box>
+            <Grid container spacing={2}>
+               <Grid item xs={8}>
+                  xs=8
+               </Grid>
+               <Grid item xs={4}>
+                  xs=4
+               </Grid>
+               <Grid item xs={4}>
+                  xs=4
+               </Grid>
+               <Grid item xs={8}>
+                  xs=8
+               </Grid>
+            </Grid>
          </Box>
       </Box>
    )

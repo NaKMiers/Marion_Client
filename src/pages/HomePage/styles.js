@@ -531,7 +531,7 @@ export default makeStyles(theme => ({
    },
    searchTextfield: {
       width: '100%',
-      background: theme.palette.primary.light,
+      background: theme.palette.secondary.main,
       '&.MuiOutlinedInput-root': {
          borderRadius: 16,
       },
@@ -558,7 +558,7 @@ export default makeStyles(theme => ({
    },
 
    filterByCategories: {
-      padding: '2px 24px 16px 24px',
+      padding: '6px 24px 20px 24px',
    },
    filterByCtgList: {
       '&.MuiList-root': {
@@ -602,7 +602,7 @@ export default makeStyles(theme => ({
    },
 
    filterByColor: {
-      padding: '2px 24px 16px 24px',
+      padding: '8px 24px 26px 24px',
    },
    color: {
       width: 22,
@@ -626,11 +626,11 @@ export default makeStyles(theme => ({
    },
 
    filterByBrand: {
-      padding: '2px 24px 16px 24px',
+      padding: '8px 24px 16px 24px',
    },
 
    filterByPrice: {
-      padding: '2px 24px 16px 24px',
+      padding: '8px 24px 10px 24px',
    },
    priceRange: {
       '&.MuiSlider-root': {
@@ -639,11 +639,11 @@ export default makeStyles(theme => ({
    },
 
    filterByStatus: {
-      padding: '2px 24px 16px 24px',
+      padding: '8px 24px 16px 24px',
    },
 
    filterTotal: {
-      padding: '28px 24px',
+      padding: '20px 24px',
    },
    selectedFilterItem: {
       display: 'inline-block',
@@ -663,7 +663,7 @@ export default makeStyles(theme => ({
    },
 
    // PRODUCTIONS
-   productions: {
+   main: {
       padding: '0px 16px',
    },
    topPanelRow: {
@@ -697,5 +697,16 @@ export default makeStyles(theme => ({
       },
       // marginTop: -5.5,
       marginLeft: 4,
+   },
+   sortMenu: {
+      '& .MuiPaper-root': {
+         // boxShadow: 'none',
+      },
+   },
+   sortItem: {
+      '&.MuiMenuItem-root': {
+         fontSize: 14,
+         color: theme.palette.secondary.darkerText,
+      },
    },
 }))
