@@ -709,4 +709,88 @@ export default makeStyles(theme => ({
          color: theme.palette.secondary.darkerText,
       },
    },
+
+   productions: {
+      position: 'relative',
+      height: '200vh',
+   },
+
+   productContainer: {
+      position: 'absolute',
+      width: '38%',
+      padding: 16,
+   },
+   product: {},
+   productThumb: {
+      position: 'relative',
+      '&:hover': {
+         '& $productImg': {
+            background: 'url(https://bom.so/zpcTuC)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+         },
+      },
+   },
+   productImg: {
+      width: '100%',
+      paddingTop: '70%',
+      background: 'url(https://bom.so/U0UUEO)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      transition: 'all 0.3s ease-in-out',
+   },
+   productCaption: {
+      position: 'relative',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'column',
+      border: `1px solid ${theme.border.light}`,
+      padding: 16,
+   },
+   productCategorie: {
+      margin: '0px !important',
+      fontSize: 9,
+      fontFamily: 'Montserrat, sans-serif !important',
+      fontWeight: 'bold',
+      color: theme.palette.secondary.darkerText,
+      textAlign: 'center',
+      letterSpacing: 2,
+   },
+   productName: {
+      margin: '5px 0px 0px 0px !important',
+      fontWeight: 'bold',
+      textAlign: 'center',
+      color: theme.palette.secondary.darkerText,
+      fontSize: 16,
+   },
+   productPrice: {
+      margin: '2px 0px 0px 0px !important',
+      textAlign: 'center',
+      color: theme.palette.info.main,
+   },
+   productPrevPrice: {
+      margin: '0px !important',
+      textDecoration: 'line-through',
+      fontSize: 13,
+      opacity: 0.6,
+   },
+   productCurPrive: {
+      margin: '0px 0px 0px 6px !important',
+      fontWeight: 'bold',
+      fontSize: 18,
+   },
+   addToCartBtn: {
+      '&.MuiButton-root': {
+         background: theme.palette.success.main,
+         color: theme.palette.primary.contrastText,
+         padding: '4px 16px',
+         marginTop: 14,
+         fontWeight: 'bold',
+         fontSize: 13,
+         fontFamily: 'Montserrat, sans-serif !important',
+         textTransform: 'none',
+         borderRadius: 24,
+      },
+   },
 }))

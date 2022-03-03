@@ -6,7 +6,6 @@ import {
    Button,
    Divider,
    Drawer,
-   Grid,
    InputAdornment,
    List,
    ListItem,
@@ -19,6 +18,7 @@ import {
 } from '@mui/material'
 import clsx from 'clsx'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import useStyles from './styles'
 
 function HomePage() {
@@ -484,20 +484,47 @@ function HomePage() {
                   </MenuItem>
                </Menu>
             </Box>
-            <Grid container spacing={2}>
-               <Grid item xs={8}>
-                  xs=8
-               </Grid>
-               <Grid item xs={4}>
-                  xs=4
-               </Grid>
-               <Grid item xs={4}>
-                  xs=4
-               </Grid>
-               <Grid item xs={8}>
-                  xs=8
-               </Grid>
-            </Grid>
+
+            <Box className={styles.productions}>
+               <Box className={styles.productContainer} style={{ top: 0, left: 0 }}>
+                  <Box className={styles.product}>
+                     <Box className={styles.productThumb}>
+                        <Link to='/carts'>
+                           <Box className={styles.productImg} />
+                        </Link>
+                     </Box>
+
+                     <Box className={styles.productCaption}>
+                        <p className={styles.productCategorie}>CHAIRS</p>
+                        <p className={styles.productName}>Lounge Wooden Chairs</p>
+                        <p className={styles.productPrice}>
+                           <span className={styles.productPrevPrice}>$89.00</span>
+                           <span className={styles.productCurPrive}>$39.00</span>
+                        </p>
+                        <Button className={styles.addToCartBtn}>Add To Cart</Button>
+                     </Box>
+                  </Box>
+               </Box>
+               <Box className={styles.productContainer} style={{ top: 0, left: '38%' }}>
+                  <Box className={styles.product}>
+                     <Box className={styles.productThumb}>
+                        <Link to='/carts'>
+                           <Box className={styles.productImg} />
+                        </Link>
+                     </Box>
+
+                     <Box className={styles.productCaption}>
+                        <p className={styles.productCategorie}>CHAIRS</p>
+                        <p className={styles.productName}>Lounge Wooden Chairs</p>
+                        <p className={styles.productPrice}>
+                           <span className={styles.productPrevPrice}>$89.00</span>
+                           <span className={styles.productCurPrive}>$39.00</span>
+                        </p>
+                        <Button className={styles.addToCartBtn}>Add To Cart</Button>
+                     </Box>
+                  </Box>
+               </Box>
+            </Box>
          </Box>
       </Box>
    )
