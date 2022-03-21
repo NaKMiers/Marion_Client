@@ -665,9 +665,8 @@ export default makeStyles(theme => ({
    // PRODUCTIONS
    main: {
       padding: '0px 16px',
-      // marginTop: 76,
-      // maxWidth: 1500,
-      background: '#000',
+      marginTop: 24,
+      maxWidth: 1500,
    },
    topPanelRow: {
       display: 'flex',
@@ -716,6 +715,7 @@ export default makeStyles(theme => ({
    productions: {
       position: 'relative',
       height: '400vh',
+      fontSize: 16,
    },
 
    productContainer: {
@@ -734,16 +734,19 @@ export default makeStyles(theme => ({
 
    // wooden chairs
    woodenChairsContainer: {
-      background: '#fff',
       top: 0,
       left: 0,
       width: '35%',
-      height: 'calc(24.7vw + 150px)',
+      height: 'calc(24.6vw + 150px)',
       '@media (max-width: 900px)': {
          top: 0,
          left: 0,
          width: '70%',
          height: 'calc(48.5vw + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 0,
+         height: 'calc(23em + 150px)',
       },
    },
    thumbWoodenChairs: {
@@ -767,12 +770,16 @@ export default makeStyles(theme => ({
       top: 0,
       left: '35%',
       width: '15%',
-      height: 'calc(22.5vw + 150px)',
+      height: 'calc(23vw + 150px)',
       '@media (max-width: 900px)': {
          top: 0,
          left: '70%',
          width: '30%',
          height: 'calc(48.4vw + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 0,
+         height: 'calc(21.8em + 150px)',
       },
    },
    thumbFloorLamp: {
@@ -799,12 +806,16 @@ export default makeStyles(theme => ({
       top: 0,
       left: '50%',
       width: '15%',
-      height: 'calc(16.8vw + 150px)',
+      height: 'calc(16.9vw + 150px)',
       '@media (max-width: 900px)': {
          top: 'calc(48.5vw + 150px)',
          left: 0,
          width: '30%',
          height: 'calc(33.8vw + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 0,
+         height: 'calc(16em + 150px)',
       },
    },
    thumbHangingLamp: {
@@ -835,6 +846,10 @@ export default makeStyles(theme => ({
          width: '70%',
          height: 'calc(42.1vw + 150px)',
       },
+      '@media (min-width: 1501px)': {
+         top: 0,
+         height: 'calc(20em + 150px)',
+      },
    },
    thumbClassyBag: {
       '&:hover': {
@@ -855,7 +870,6 @@ export default makeStyles(theme => ({
    // luxury chairs
    luxuryContainer: {
       top: 'calc(24.7vw + 150px)',
-      left: 0,
       width: '35%',
       height: 'calc(24.7vw + 150px)',
       '@media (max-width: 900px)': {
@@ -863,6 +877,10 @@ export default makeStyles(theme => ({
          left: '30%',
          width: '70%',
          height: 'calc(48.2vw  + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 'calc(23.1em + 150px)',
+         height: 'calc(23em + 150px)',
       },
    },
    thumbLuxuryChairs: {
@@ -883,15 +901,19 @@ export default makeStyles(theme => ({
 
    // new fashion bags
    newFashionBagContainer: {
-      top: 'calc(22.5vw + 150px)',
+      top: 'calc(23vw + 150px)',
       left: '35%',
       width: '15%',
-      height: 'calc(21.4vw + 150px)',
+      height: 'calc(21.8vw + 150px)',
       '@media (max-width: 900px)': {
          top: 'calc(82.3vw + 300px)',
          left: 0,
          width: '30%',
          height: 'calc(43.8vw  + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 'calc(21.8em + 150px)',
+         height: 'calc(20.7em + 150px)',
       },
    },
    thumbNewFashionBagChairs: {
@@ -912,15 +934,19 @@ export default makeStyles(theme => ({
 
    // furniture
    furnitureContainer: {
-      top: 'calc(16.8vw + 150px)',
+      top: 'calc(16.9vw + 150px)',
       left: '50%',
       width: '15%',
-      height: 'calc(16.7vw + 150px)',
+      height: 'calc(16.9vw + 150px)',
       '@media (max-width: 900px)': {
          top: 'calc(126.1vw + 450px)',
          left: 0,
          width: '30%',
          height: 'calc(33.8vw + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 'calc(16em + 150px)',
+         height: 'calc(16em + 150px)',
       },
    },
    thumbFurnitureChairs: {
@@ -944,12 +970,16 @@ export default makeStyles(theme => ({
       top: 'calc(21.5vw + 150px)',
       left: '65%',
       width: '17.5%',
-      height: 'calc(17vw + 150px)',
+      height: 'calc(16.8vw + 150px)',
       '@media (max-width: 900px)': {
          top: 'calc(138.8vw + 450px)',
          left: '30%',
          width: '35%',
          height: 'calc(33.6vw + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 'calc(20em + 150px)',
+         height: 'calc(15.9em + 150px)',
       },
    },
    thumbStylishWatchChairs: {
@@ -980,6 +1010,10 @@ export default makeStyles(theme => ({
          width: '35%',
          height: 'calc(41vw + 150px)',
       },
+      '@media (min-width: 1501px)': {
+         top: 'calc(20em + 150px)',
+         height: 'calc(19.4em + 150px)',
+      },
    },
    thumbAntiqueVaseChairs: {
       '&:hover': {
@@ -999,7 +1033,7 @@ export default makeStyles(theme => ({
 
    // chairs mat
    chairsMatContainer: {
-      top: 'calc(33.5vw + 300px)',
+      top: 'calc(33.8vw + 300px)',
       left: '50%',
       width: '15%',
       height: 'calc(17.5vw + 150px)',
@@ -1008,6 +1042,10 @@ export default makeStyles(theme => ({
          left: 0,
          width: '30%',
          height: 'calc(35vw + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 'calc(41.4em + 150px)',
+         height: 'calc(16.6em + 150px)',
       },
    },
    thumbChairsMatChairs: {
@@ -1028,15 +1066,19 @@ export default makeStyles(theme => ({
 
    // exquisite vase
    exquisiteVaseContainer: {
-      top: 'calc(43.9vw + 300px)',
+      top: 'calc(44.8vw + 300px)',
       left: '35%',
       width: '15%',
-      height: 'calc(21.8vw + 150px)',
+      height: 'calc(22.4vw + 150px)',
       '@media (max-width: 900px)': {
          top: 'calc(194.6vw + 750px)',
          left: 0,
          width: '30%',
          height: 'calc(44.9vw + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 'calc(51.8em + 150px)',
+         height: 'calc(21.3em + 150px)',
       },
    },
    thumbExquisiteVaseChairs: {
@@ -1055,17 +1097,21 @@ export default makeStyles(theme => ({
       paddingTop: '165%',
    },
 
-   // exquisite vase
+   // lamps shade
    lampShadeContainer: {
-      top: 'calc(38.5vw + 300px)',
+      top: 'calc(38.3vw + 300px)',
       left: '65%',
       width: '17.5%',
-      height: 'calc(24.7vw + 150px)',
+      height: 'calc(25vw + 150px)',
       '@media (max-width: 900px)': {
          top: 'calc(172.4vw + 600px)',
          left: '30%',
          width: '35%',
-         height: 'calc(44.9vw + 150px)',
+         height: 'calc(49.6vw + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 'calc(45.3em + 150px)',
+         height: 'calc(23.6em + 150px)',
       },
    },
    thumbLampShadeChairs: {
@@ -1086,15 +1132,19 @@ export default makeStyles(theme => ({
 
    // accessories
    accessoriesContainer: {
-      top: 'calc(42.1vw + 300px)',
+      top: 'calc(42vw + 300px)',
       left: '82.5%',
       width: '17.5%',
-      height: 'calc(21.4vw + 150px)',
+      height: 'calc(21.3vw + 150px)',
       '@media (max-width: 900px)': {
          top: 'calc(179.8vw + 600px)',
          left: '65%',
          width: '35%',
          height: 'calc(42.2vw + 150px)',
+      },
+      '@media (min-width: 1501px)': {
+         top: 'calc(48.8em + 150px)',
+         height: 'calc(20.1em + 150px)',
       },
    },
    thumbAccessoriesChairs: {

@@ -486,7 +486,7 @@ function HomePage() {
                </Menu>
             </Box>
 
-            <Box className={styles.productions}>
+            <div className={styles.productions}>
                <Box className={clsx(styles.productContainer, styles.woodenChairsContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbWoodenChairs)}>
@@ -776,7 +776,7 @@ function HomePage() {
                      </Box>
                   </Box>
                </Box>
-            </Box>
+            </div>
          </Box>
       </Box>
    )
