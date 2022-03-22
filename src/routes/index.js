@@ -4,6 +4,7 @@ import NotFoundPage from '../pages/NotFoundPage'
 import WishlistPage from '../pages/WishlistPage'
 import NotificationPage from '../pages/NotificationPage'
 import CartPage from '../pages/CartPage'
+import ProductPage from '../pages/ProductPage'
 
 const routes = [
    {
@@ -25,6 +26,11 @@ const routes = [
       path: '/wishlist',
       exact: true,
       component: () => <WishlistPage />,
+   },
+   {
+      path: '/product',
+      exact: false,
+      component: () => <ProductPage />,
    },
    {
       path: '/',

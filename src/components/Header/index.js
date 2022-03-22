@@ -88,6 +88,7 @@ function Header() {
             <Typography className={clsx(styles.logo, { [styles.logoScroll]: scrollPosition })}>
                <Link to='/'>Marion</Link>
             </Typography>
+
             <Box className={styles.search}>
                <TextField
                   variant='outlined'
@@ -99,6 +100,7 @@ function Header() {
                   }}
                />
             </Box>
+
             <Box className={styles.headerBtnWrap}>
                <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                   <Link to='/carts'>

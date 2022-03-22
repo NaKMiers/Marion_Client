@@ -143,6 +143,7 @@ export default makeStyles(theme => ({
    notifyTitle: {
       '&.MuiTypography-root': {
          fontSize: 20,
+         margin: '3px 0px -8px 0px !important',
       },
    },
    notifyDesc: {

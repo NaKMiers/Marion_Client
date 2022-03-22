@@ -70,7 +70,7 @@ export default makeStyles(theme => ({
    },
    iconBtn: {
       '&.MuiIconButton-root': {
-         margin: '0px 8px 0px 0px',
+         margin: '12px 8px 0px 0px',
          padding: 8,
       },
    },

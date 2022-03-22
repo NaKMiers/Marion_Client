@@ -282,7 +282,7 @@ export default makeStyles(theme => ({
    },
    socials: {
       display: 'inline-block',
-      marginBottom: -3,
+      marginTop: 22,
    },
    socialIcon: {
       '&.MuiSvgIcon-root': {
