@@ -476,23 +476,151 @@ export default makeStyles(theme => ({
 
    // PRODUCT CONTENT BOTTOM
    productContentBottom: {
-      padding: '0px 20px',
+      padding: '56px 20px',
    },
 
    // PRODUCT CONTENT BOTTOM - tabs
    tabs: {},
    tabHeadings: {
       borderBottom: '1px solid #ccc',
+      '& .MuiTabs-indicator': {
+         background: theme.palette.info.main,
+      },
+      '& .Mui-selected': {
+         background: theme.palette.info.main,
+         color: theme.palette.info.main,
+      },
    },
    tabHeading: {
       '&.MuiButtonBase-root': {
-         borderBottom: '2px solid #333',
          color: theme.palette.secondary.darkerText,
       },
    },
    tabPanel: {},
+   descItem: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+   },
+   descIcon: {
+      '&.MuiSvgIcon-root': {
+         width: 48,
+         height: 48,
+         background: theme.palette.secondary.main,
+         borderRadius: '50%',
+         padding: 12,
+      },
+   },
+   descItemText: {
+      padding: '0px 12px',
+   },
+   descIcon1: {
+      '&.MuiSvgIcon-root': {
+         color: '#f44336',
+      },
+   },
+   descIcon2: {
+      '&.MuiSvgIcon-root': {
+         color: theme.palette.info.main,
+      },
+   },
+   descIcon3: {
+      '&.MuiSvgIcon-root': {
+         color: '#f44336',
+      },
+   },
+   descIcon4: {
+      '&.MuiSvgIcon-root': {
+         color: theme.palette.info.main,
+      },
+   },
+   descIcon5: {
+      '&.MuiSvgIcon-root': {
+         color: theme.palette.warning.main,
+      },
+   },
+   descIcon6: {
+      '&.MuiSvgIcon-root': {
+         color: theme.palette.success.main,
+      },
+   },
 
+   addtionalInfoTable: {
+      textAlign: 'left',
+      fontSize: 14,
+   },
+   tableHeading: {
+      width: 150,
+   },
+
+   reviewPanelWrap: {
+      display: 'flex',
+      '@media (max-width: 900px)': {
+         flexDirection: 'column',
+      },
+      color: theme.palette.secondary.darkerText,
+   },
+   otherReviews: {
+      width: '50%',
+      paddingRight: 16,
+      '@media (max-width: 900px)': {
+         width: '100%',
+      },
+   },
+   tablePanelHeading: {
+      '&.MuiTypography-root': {
+         fontSize: 28,
+         fontFamily: 'Montserrat, sans-serif !important',
+         margin: '0px 0px 24px 0px !important',
+      },
+   },
+   reviewList: {
+      width: '100%',
+      maxWidth: 500,
+   },
+
+   myReivew: {
+      width: '50%',
+      paddingLeft: 16,
+      '@media (max-width: 900px)': {
+         width: '100%',
+      },
+   },
+
+   myReviewInput: {
+      width: '100%',
+      height: 150,
+      fontSize: 16,
+      padding: '8px 12px',
+      outline: 'none',
+      border: `1px solid ${theme.border.darker}`,
+      borderRadius: 4,
+      resize: 'none',
+   },
+   myReviewInfoInput: {
+      width: '100%',
+      fontSize: 16,
+      outline: 'none',
+      padding: '8px 12px',
+      border: `1px solid ${theme.border.darker}`,
+      borderRadius: 4,
+   },
+   saveInfoReviewBtnWrap: {
+      display: 'flex',
+      alignItem: 'center',
+   },
+   saveInfoReviewBtn: {
+      width: 24,
+      height: 24,
+   },
+   text: {
+      margin: '0px 0px 0px 8px !important',
+      fontSize: 16,
+   },
+
+   // PRODUCT CONTENT BOTTOM - coupon
    coupon: {
+      margin: '24px 0px',
       padding: 24,
       background: 'url(https://bom.so/QFGwwN)',
       backgroundSize: 'contain',
@@ -529,7 +657,6 @@ export default makeStyles(theme => ({
          width: '100%',
       },
    },
-
    couponTitle: {
       width: '26%',
       textAlign: 'center',
@@ -581,5 +708,40 @@ export default makeStyles(theme => ({
       color: theme.palette.secondary.contrastText,
       marginTop: 20,
       borderRadius: 4,
+      cursor: 'pointer',
+      '&:hover': {
+         background: theme.palette.info.darker,
+      },
+   },
+
+   // PRODUCT CONTENT BOTTOM - moreDetail
+   moreDetail: {
+      marginTop: 48,
+   },
+   accordion: {
+      '&.MuiPaper-root': {
+         boxShadow: 'none',
+         borderRadius: '0 !important',
+      },
+   },
+   accordionHeading: {
+      color: theme.palette.secondary.darkerText,
+   },
+   accordionSummary: {
+      '&.MuiAccordionSummary-root': {
+         height: 56,
+         minHeight: 0,
+         padding: 0,
+      },
+   },
+   accordionDetails: {
+      display: 'flex',
+      margin: '0px -16px',
+   },
+   accordionDetail: {
+      padding: '0px 16px',
+   },
+   accordionBrandImg: {
+      width: '30%',
    },
 }))

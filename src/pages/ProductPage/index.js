@@ -11,12 +11,38 @@ import MinusIcon from '@mui/icons-material/Remove'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import WindowIcon from '@mui/icons-material/Window'
 import YouTubeIcon from '@mui/icons-material/YouTube'
-import { Box, Button, Grid, IconButton, Tab, Tabs, Typography } from '@mui/material'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+
+import {
+   Accordion,
+   AccordionDetails,
+   AccordionSummary,
+   Avatar,
+   Box,
+   Button,
+   Checkbox,
+   Divider,
+   Grid,
+   IconButton,
+   List,
+   ListItem,
+   ListItemAvatar,
+   ListItemText,
+   Rating,
+   Tab,
+   Tabs,
+   Typography,
+} from '@mui/material'
 import clsx from 'clsx'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import useStyles from './styles'
 import BeachAccessIcon from '@mui/icons-material/BeachAccess'
+import SpeedIcon from '@mui/icons-material/Speed'
+import EventNoteIcon from '@mui/icons-material/EventNote'
+import ContentCutIcon from '@mui/icons-material/ContentCut'
+import CardGiftcardIcon from '@mui/icons-material/CardGiftcard'
+import CachedIcon from '@mui/icons-material/Cached'
 
 function TabPanel({ children, value, index, ...other }) {
    return (
@@ -47,11 +73,12 @@ function ProductPage() {
       setCurThumbCompleted(value)
    }
 
-   const [value, setValue] = useState(0)
-
-   const handleChange = (event, newValue) => {
-      setValue(newValue)
+   const [tabValue, setTabValue] = useState(0)
+   const handleChangeTab = (event, newValue) => {
+      setTabValue(newValue)
    }
+
+   const [ratingValue, setRatingValue] = useState(0)
 
    return (
       <Box className={styles.productPage}>
@@ -236,12 +263,13 @@ function ProductPage() {
 
             <Box className={styles.productContentBottom}>
                <Box className={styles.tabs}>
-                  <Tabs value={value} onChange={handleChange} className={styles.tabHeadings}>
+                  <Tabs value={tabValue} onChange={handleChangeTab} className={styles.tabHeadings}>
                      <Tab label='DESCRIPTION' className={styles.tabHeading} />
                      <Tab label='ADDITIONAL INFO' className={styles.tabHeading} />
                      <Tab label='REVIEWS' className={styles.tabHeading} />
                   </Tabs>
-                  <TabPanel value={value} index={0} className={styles.tabPanel}>
+
+                  <TabPanel value={tabValue} index={0} className={styles.tabPanel}>
                      <Typography className={styles.descriptionBottom}>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -251,61 +279,162 @@ function ProductPage() {
                         non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                      </Typography>
                      <Grid container spacing={2}>
-                        <Grid item md={4} xs={12} style={{ display: 'flex' }}>
-                           <IconButton>
-                              <BeachAccessIcon />
-                           </IconButton>
-                           <Typography>
+                        <Grid item md={4} xs={12} className={styles.descItem}>
+                           <BeachAccessIcon className={clsx(styles.descIcon, styles.descIcon1)} />
+                           <Typography className={styles.descItemText}>
                               Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
                            </Typography>
                         </Grid>
-                        <Grid item md={4} xs={12} style={{ display: 'flex' }}>
-                           <IconButton>
-                              <BeachAccessIcon />
-                           </IconButton>
-                           <Typography>
+                        <Grid item md={4} xs={12} className={styles.descItem}>
+                           <SpeedIcon className={clsx(styles.descIcon, styles.descIcon2)} />
+                           <Typography className={styles.descItemText}>
                               Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
                            </Typography>
                         </Grid>
-                        <Grid item md={4} xs={12} style={{ display: 'flex' }}>
-                           <IconButton>
-                              <BeachAccessIcon />
-                           </IconButton>
-                           <Typography>
+                        <Grid item md={4} xs={12} className={styles.descItem}>
+                           <EventNoteIcon className={clsx(styles.descIcon, styles.descIcon3)} />
+                           <Typography className={styles.descItemText}>
                               Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
                            </Typography>
                         </Grid>
-                        <Grid item md={4} xs={12} style={{ display: 'flex' }}>
-                           <IconButton>
-                              <BeachAccessIcon />
-                           </IconButton>
-                           <Typography>
+                        <Grid item md={4} xs={12} className={styles.descItem}>
+                           <ContentCutIcon className={clsx(styles.descIcon, styles.descIcon4)} />
+                           <Typography className={styles.descItemText}>
                               Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
                            </Typography>
                         </Grid>
-                        <Grid item md={4} xs={12} style={{ display: 'flex' }}>
-                           <IconButton>
-                              <BeachAccessIcon />
-                           </IconButton>
-                           <Typography>
+                        <Grid item md={4} xs={12} className={styles.descItem}>
+                           <CardGiftcardIcon className={clsx(styles.descIcon, styles.descIcon5)} />
+                           <Typography className={styles.descItemText}>
                               Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
                            </Typography>
                         </Grid>
-                        <Grid item xs={4} style={{ display: 'flex' }}>
-                           <IconButton>
-                              <BeachAccessIcon />
-                           </IconButton>
-                           <Typography>
+                        <Grid item md={4} xs={12} className={styles.descItem}>
+                           <CachedIcon className={clsx(styles.descIcon, styles.descIcon6)} />
+                           <Typography className={styles.descItemText}>
                               Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
                            </Typography>
                         </Grid>
                      </Grid>
                   </TabPanel>
-                  <TabPanel value={value} index={1} className={styles.tabPanel}>
-                     Item Two
+                  <TabPanel value={tabValue} index={1} className={styles.tabPanel}>
+                     <table className={styles.addtionalInfoTable}>
+                        <tbody>
+                           <tr>
+                              <th className={styles.tableHeading}>Weight</th>
+                              <td>0.5 kg</td>
+                           </tr>
+                           <tr>
+                              <th className={styles.tableHeading}>Demensions</th>
+                              <td>35 x 20 x 56 cm</td>
+                           </tr>
+                        </tbody>
+                     </table>
                   </TabPanel>
-                  <TabPanel value={value} index={2} className={styles.tabPanel}>
-                     Item Three
+                  <TabPanel value={tabValue} index={2} className={styles.tabPanel}>
+                     <Box className={styles.reviewPanelWrap}>
+                        <Box className={styles.otherReviews}>
+                           <Typography className={styles.tablePanelHeading}>REVIEWS</Typography>
+                           <List className={styles.reviewList}>
+                              <ListItem alignItems='flex-start'>
+                                 <ListItemAvatar>
+                                    <Avatar alt='Remy Sharp' src='https://bom.so/oM1Xmz' />
+                                 </ListItemAvatar>
+                                 <ListItemText
+                                    primary='Brunch this weekend?'
+                                    secondary={
+                                       <>
+                                          <Typography
+                                             sx={{ display: 'inline' }}
+                                             component='span'
+                                             variant='body2'
+                                             color='text.primary'
+                                          >
+                                             Ali Connors
+                                          </Typography>
+                                          {" — I'll be in your neighborhood doing errands this…"}
+                                       </>
+                                    }
+                                 />
+                              </ListItem>
+                              <Divider variant='inset' component='li' />
+                              <ListItem alignItems='flex-start'>
+                                 <ListItemAvatar>
+                                    <Avatar alt='Travis Howard' src='https://bom.so/oM1Xmz' />
+                                 </ListItemAvatar>
+                                 <ListItemText
+                                    primary='Summer BBQ'
+                                    secondary={
+                                       <>
+                                          <Typography
+                                             sx={{ display: 'inline' }}
+                                             component='span'
+                                             variant='body2'
+                                             color='text.primary'
+                                          >
+                                             to Scott, Alex, Jennifer
+                                          </Typography>
+                                          {" — Wish I could come, but I'm out of town this…"}
+                                       </>
+                                    }
+                                 />
+                              </ListItem>
+                              <Divider variant='inset' component='li' />
+                              <ListItem alignItems='flex-start'>
+                                 <ListItemAvatar>
+                                    <Avatar alt='Cindy Baker' src='https://bom.so/oM1Xmz' />
+                                 </ListItemAvatar>
+                                 <ListItemText
+                                    primary='Oui Oui'
+                                    secondary={
+                                       <>
+                                          <Typography
+                                             sx={{ display: 'inline' }}
+                                             component='span'
+                                             variant='body2'
+                                             color='text.primary'
+                                          >
+                                             Sandra Adams
+                                          </Typography>
+                                          {' — Do you have Paris recommendations? Have you ever…'}
+                                       </>
+                                    }
+                                 />
+                              </ListItem>
+                           </List>
+                        </Box>
+
+                        <Box className={styles.myReivew}>
+                           <Typography className={styles.tablePanelHeading}>
+                              ADD A REVIEW
+                           </Typography>
+                           <Typography>Rating *</Typography>
+                           <Rating
+                              name='simple-controlled'
+                              value={ratingValue}
+                              onChange={(event, newValue) => {
+                                 setRatingValue(newValue)
+                              }}
+                           />
+
+                           <p>My Review *</p>
+                           <textarea className={styles.myReviewInput}></textarea>
+
+                           <p>Name *</p>
+                           <input className={styles.myReviewInfoInput} />
+
+                           <p>Email *</p>
+                           <input className={styles.myReviewInfoInput} />
+                           <p />
+                           <Box className={styles.saveInfoReviewBtnWrap}>
+                              <Checkbox color='success' className={styles.saveInfoReviewBtn} />
+                              <p className={styles.text}>
+                                 Save my name, email, and website in this browser for the next time
+                                 i commnemt.
+                              </p>
+                           </Box>
+                        </Box>
+                     </Box>
                   </TabPanel>
                </Box>
 
@@ -328,7 +457,127 @@ function ProductPage() {
                   </Box>
                </Box>
 
-               <Box className={styles.moreDetail}></Box>
+               <Box className={styles.moreDetail}>
+                  <Accordion className={styles.accordion}>
+                     <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        className={styles.accordionSummary}
+                     >
+                        <Typography className={styles.accordionHeading}>QUALITY</Typography>
+                     </AccordionSummary>
+                     <AccordionDetails className={styles.accordionDetails}>
+                        <Typography
+                           className={styles.accordionDetail}
+                           style={{ width: 'calc(100%/2)' }}
+                        >
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enimvelit esse
+                           cillum dolore eu ad minim veniam, quis nostrud exercitation ullamco
+                           laboris nisi ut aliquip ex ea commodo consequat.
+                        </Typography>
+                        <Typography
+                           className={styles.accordionDetail}
+                           style={{ width: 'calc(100%/2)' }}
+                        >
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enimvelit esse
+                           cillum dolore eu ad minim veniam, quis nostrud exercitation ullamco
+                           laboris nisi ut aliquip ex ea commodo consequat.
+                        </Typography>
+                        <Typography
+                           className={styles.accordionDetail}
+                           style={{ width: 'calc(100%/2)' }}
+                        >
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enimvelit esse
+                           cillum dolore eu ad minim veniam, quis nostrud exercitation ullamco
+                           laboris nisi ut aliquip ex ea commodo consequat.
+                        </Typography>
+                     </AccordionDetails>
+                  </Accordion>
+
+                  <Accordion className={styles.accordion}>
+                     <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        className={styles.accordionSummary}
+                     >
+                        <Typography className={styles.accordionHeading}>BRAND</Typography>
+                     </AccordionSummary>
+                     <AccordionDetails className={styles.accordionDetails}>
+                        <img
+                           src='https://bom.so/UvcXWo'
+                           alt='brand'
+                           className={styles.accordionBrandImg}
+                        />
+                        <Typography className={styles.accordionDetail} style={{ width: '70%' }}>
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enimvelit esse
+                           cillum dolore eu ad minim veniam, quis nostrud exercitation ullamco
+                           laboris nisi ut aliquip ex ea commodo consequat.
+                        </Typography>
+                     </AccordionDetails>
+                  </Accordion>
+
+                  <Accordion className={styles.accordion}>
+                     <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        className={styles.accordionSummary}
+                     >
+                        <Typography className={styles.accordionHeading}>GUARANTEE</Typography>
+                     </AccordionSummary>
+                     <AccordionDetails className={styles.accordionDetails}>
+                        <Typography
+                           className={styles.accordionDetail}
+                           style={{ width: 'calc(100%/2)' }}
+                        >
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enimvelit esse
+                           cillum dolore eu ad minim veniam, quis nostrud exercitation ullamco
+                           laboris nisi ut aliquip ex ea commodo consequat.
+                        </Typography>
+                        <Typography
+                           className={styles.accordionDetail}
+                           style={{ width: 'calc(100%/2)' }}
+                        >
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enimvelit esse
+                           cillum dolore eu ad minim veniam, quis nostrud exercitation ullamco
+                           laboris nisi ut aliquip ex ea commodo consequat.
+                        </Typography>
+                        <Typography
+                           className={styles.accordionDetail}
+                           style={{ width: 'calc(100%/2)' }}
+                        >
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enimvelit esse
+                           cillum dolore eu ad minim veniam, quis nostrud exercitation ullamco
+                           laboris nisi ut aliquip ex ea commodo consequat.
+                        </Typography>
+                     </AccordionDetails>
+                  </Accordion>
+
+                  <Accordion className={styles.accordion}>
+                     <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        className={styles.accordionSummary}
+                     >
+                        <Typography className={styles.accordionHeading}>STYLE</Typography>
+                     </AccordionSummary>
+                     <AccordionDetails className={styles.accordionDetails}>
+                        <img
+                           src='https://bom.so/Is5i4i'
+                           alt='brand'
+                           className={styles.accordionBrandImg}
+                        />
+                        <Typography className={styles.accordionDetail} style={{ width: '70%' }}>
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enimvelit esse
+                           cillum dolore eu ad minim veniam, quis nostrud exercitation ullamco
+                           laboris nisi ut aliquip ex ea commodo consequat.
+                        </Typography>
+                     </AccordionDetails>
+                  </Accordion>
+               </Box>
 
                <Box className={styles.productIllustrations}></Box>
 
