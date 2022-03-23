@@ -19,15 +19,19 @@ const theme = createTheme({
 
       info: {
          main: '#03a9f4',
+         darker: '#0293D6',
       },
       success: {
          main: '#60F579',
+         darker: '#54D669',
       },
       danger: {
          main: '#f44336',
+         darker: '#D63A2F',
       },
       warning: {
          main: '#ffc107',
+         darker: '#E0AA07',
       },
    },
 

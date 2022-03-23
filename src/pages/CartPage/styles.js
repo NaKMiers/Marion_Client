@@ -313,6 +313,7 @@ export default makeStyles(theme => ({
       background: theme.palette.primary.main,
       padding: '12px 12px 5px 12px',
       borderRadius: '50%',
+      marginRight: 8,
    },
    emptyCartIcon: {
       '&.MuiSvgIcon-root': {

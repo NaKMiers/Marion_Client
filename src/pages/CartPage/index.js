@@ -1,6 +1,6 @@
-import PlusIcon from '@mui/icons-material/Add'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import RemoveIcon from '@mui/icons-material/HighlightOff'
+import PlusIcon from '@mui/icons-material/Add'
 import MinusIcon from '@mui/icons-material/Remove'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import InfoIcon from '@mui/icons-material/Info'
