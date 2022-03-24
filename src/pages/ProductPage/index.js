@@ -12,6 +12,7 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import WindowIcon from '@mui/icons-material/Window'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 
 import {
    Accordion,
@@ -43,6 +44,8 @@ import EventNoteIcon from '@mui/icons-material/EventNote'
 import ContentCutIcon from '@mui/icons-material/ContentCut'
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard'
 import CachedIcon from '@mui/icons-material/Cached'
+import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore'
 
 function TabPanel({ children, value, index, ...other }) {
    return (
@@ -117,6 +120,20 @@ function ProductPage() {
                      ) : (
                         <Box className={styles.productThumb3} />
                      )}
+
+                     <IconButton
+                        className={styles.thumbNextBtn}
+                        onClick={() => handleChangeThumb(curThumb + 1 > 3 ? 1 : curThumb + 1)}
+                     >
+                        <NavigateNextIcon className={styles.thumbBtnIcon} />
+                     </IconButton>
+                     <IconButton
+                        className={styles.thumbPrevBtn}
+                        onClick={() => handleChangeThumb(curThumb - 1 < 1 ? 3 : curThumb - 1)}
+                     >
+                        <NavigateBeforeIcon className={styles.thumbBtnIcon} />
+                     </IconButton>
+
                      <Box className={styles.productLabel}>
                         <Box className={styles.onSale}>ON SALE</Box>
                         <Box className={styles.new}>New</Box>
@@ -172,7 +189,7 @@ function ProductPage() {
                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </Typography>
-                  <Box className={styles.cartWrap}>
+                  <Box className={clsx(styles.cartWrap, styles.cartWrap1)}>
                      <Box className={styles.quantityWrap}>
                         <Button className={styles.decQuantityBtn}>
                            <MinusIcon className={styles.decIcon} />
@@ -183,12 +200,19 @@ function ProductPage() {
                         </Button>
                      </Box>
 
-                     <Button className={styles.addToCartBtn}>ADD TO CARD</Button>
+                     <Button className={clsx(styles.addToCartBtn, styles.addToCartBtn1)}>
+                        ADD TO CARD
+                     </Button>
 
                      <IconButton className={styles.favBtn}>
                         {/* <FavoriteBorderIcon className={styles.favIcon} /> */}
                         <FavoriteIcon className={styles.favIcon} />
                      </IconButton>
+                  </Box>
+                  <Box className={clsx(styles.cartWrap, styles.cartWrap2)}>
+                     <Button className={clsx(styles.addToCartBtn, styles.addToCartBtn2)}>
+                        ADD TO CARD
+                     </Button>
                   </Box>
                   <Typography className={styles.manufacture}>
                      SKU: <span className={styles.manufactureDate}>4569HZ-1-1-1.</span>
@@ -579,11 +603,167 @@ function ProductPage() {
                   </Accordion>
                </Box>
 
-               <Box className={styles.productIllustrations}></Box>
+               <Grid container className={styles.productIllustrations}>
+                  <Grid item className={styles.prIllItem}>
+                     <Box className={styles.prIllItemImg1} />
+                  </Grid>
 
-               <Box className={styles.theShopOwner}></Box>
+                  <Grid item className={clsx(styles.prIllItem, styles.prIllItemNoImg)}>
+                     <Typography className={styles.prIllHeading}>LOREM IPSUM DOLOR SIT!</Typography>
+                     <Typography className={styles.prIllDesc}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation. Ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum.
+                     </Typography>
+                  </Grid>
 
-               <Box className={styles.relatedProducts}></Box>
+                  <Grid item className={clsx(styles.prIllItem, styles.prIllItemNoImg)}>
+                     <Typography className={styles.prIllHeading}>LOREM IPSUM DOLOR SIT!</Typography>
+                     <Typography className={styles.prIllDesc}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore.
+                     </Typography>
+                     <Typography className={styles.prIllDesc}>
+                        Lorem ipsum dolor sit amet, consectetur dipisicing elit sed do eiusmod
+                     </Typography>
+                     <Typography className={styles.prIllDesc}>
+                        Dolore magna aliqua enim ad minim veniam, quis nostrud
+                     </Typography>
+                     <Typography className={styles.prIllDesc}>
+                        Ex ea commodo consequat lorem ipsum dolor sit amet enim
+                     </Typography>
+                  </Grid>
+
+                  <Grid item className={styles.prIllItem}>
+                     <Box className={styles.prIllItemImg2} />
+                  </Grid>
+               </Grid>
+
+               <Box className={styles.relatedProductions}>
+                  <Typography className={styles.relativeProductHeading}>
+                     RELATIVE PRODUCTS
+                  </Typography>
+                  <Box className={styles.relatedProducts}>
+                     <Box className={styles.relatedProductItem}>
+                        <Box className={styles.relatedProductItemInner}>
+                           <Box className={clsx(styles.productThumb, styles.thumbStylishWatch)}>
+                              <Link to='/carts'>
+                                 <Box className={clsx(styles.productImg, styles.stylishWatchImg)} />
+                              </Link>
+                           </Box>
+
+                           <Box className={styles.productCaption}>
+                              <Rating
+                                 name='read-only'
+                                 value={4}
+                                 readOnly
+                                 className={styles.ratingRelatedPr}
+                              />
+                              <p className={styles.relatedProductCategorie}>ACCESSORIES</p>
+                              <p className={styles.relatedProductName}>Stylish Watch</p>
+                              <p className={styles.relatedProductPrice} title='$35.00'>
+                                 <span className={styles.relatedProductCurPrice}>$35.00</span>
+                              </p>
+                              <IconButton className={styles.relatedPrBtn}>
+                                 <FavoriteIcon className={styles.relatedPrIcon} />
+                              </IconButton>
+                           </Box>
+                        </Box>
+                     </Box>
+
+                     <Box className={styles.relatedProductItem}>
+                        <Box className={styles.relatedProductItemInner}>
+                           <Box className={clsx(styles.productThumb, styles.thumbFloorLamp)}>
+                              <Link to='/carts'>
+                                 <Box className={clsx(styles.productImg, styles.floorLampImg)} />
+                              </Link>
+                           </Box>
+
+                           <Box className={styles.productCaption}>
+                              <Rating
+                                 name='read-only'
+                                 value={3}
+                                 readOnly
+                                 className={styles.ratingRelatedPr}
+                              />
+                              <p className={styles.relatedProductCategorie}>LAMPS</p>
+                              <p className={styles.relatedProductName}>Floor Lamp</p>
+                              <p className={styles.relatedProductPrice} title='$39.99'>
+                                 <span className={styles.relatedProductCurPrice}>$39.99</span>
+                              </p>
+                              <IconButton className={styles.relatedPrBtn}>
+                                 <FavoriteIcon className={styles.relatedPrIcon} />
+                              </IconButton>
+                           </Box>
+                        </Box>
+                     </Box>
+
+                     <Box className={styles.relatedProductItem}>
+                        <Box className={styles.relatedProductItemInner}>
+                           <Box className={clsx(styles.productThumb, styles.thumbNewFashionBag)}>
+                              <Link to='/carts'>
+                                 <Box
+                                    className={clsx(styles.productImg, styles.newFashionBagImg)}
+                                 />
+                              </Link>
+                           </Box>
+
+                           <Box className={styles.productCaption}>
+                              <Rating
+                                 name='read-only'
+                                 value={5}
+                                 readOnly
+                                 className={styles.ratingRelatedPr}
+                              />
+                              <p className={styles.relatedProductCategorie}>ACCESSORIES</p>
+                              <p className={styles.relatedProductName}>New Fashion Bag</p>
+                              <p className={styles.relatedProductPrice} title='$39.99'>
+                                 <span className={styles.relatedProductPrevPrice}>$79.99</span>
+                                 <span className={styles.relatedProductCurPrice}>$39.99</span>
+                              </p>
+                              <IconButton className={styles.relatedPrBtn}>
+                                 <FavoriteIcon className={styles.relatedPrIcon} />
+                              </IconButton>
+                              <IconButton className={styles.relatedPrBtn}>
+                                 <AddShoppingCartIcon className={styles.relatedPrIcon} />
+                              </IconButton>
+                           </Box>
+                        </Box>
+                     </Box>
+
+                     <Box className={styles.relatedProductItem}>
+                        <Box className={styles.relatedProductItemInner}>
+                           <Box className={clsx(styles.productThumb, styles.thumbHangingLamp)}>
+                              <Link to='/carts'>
+                                 <Box className={clsx(styles.productImg, styles.hangingLampImg)} />
+                              </Link>
+                           </Box>
+
+                           <Box className={styles.productCaption}>
+                              <Rating
+                                 name='read-only'
+                                 value={3}
+                                 readOnly
+                                 className={styles.ratingRelatedPr}
+                              />
+                              <p className={styles.relatedProductCategorie}>LAMPS</p>
+                              <p className={styles.relatedProductName}>Hanging Lamp</p>
+                              <p className={styles.relatedProductPrice} title='$39.99'>
+                                 <span className={styles.relatedProductCurPrice}>$39.99</span>
+                              </p>
+                              <IconButton className={styles.relatedPrBtn}>
+                                 <FavoriteIcon className={styles.relatedPrIcon} />
+                              </IconButton>
+                              <IconButton className={styles.relatedPrBtn}>
+                                 <AddShoppingCartIcon className={styles.relatedPrIcon} />
+                              </IconButton>
+                           </Box>
+                        </Box>
+                     </Box>
+                  </Box>
+               </Box>
 
                <Box className={styles.widget}></Box>
             </Box>

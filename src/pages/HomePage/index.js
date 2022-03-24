@@ -490,7 +490,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.woodenChairsContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbWoodenChairs)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.woodenChairImg)} />
                         </Link>
                      </Box>
@@ -512,7 +512,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.floorLampContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbFloorLamp)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.floorLampImg)} />
                         </Link>
                      </Box>
@@ -534,7 +534,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.hangingLampContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbHangingLamp)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.hangingLampImg)} />
                         </Link>
                      </Box>
@@ -556,7 +556,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.classyBagContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbClassyBag)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.classyBagImg)} />
                         </Link>
                      </Box>
@@ -578,7 +578,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.luxuryContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbLuxuryChairs)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.luxuryChairsImg)} />
                         </Link>
                      </Box>
@@ -600,7 +600,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.newFashionBagContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbNewFashionBagChairs)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box
                               className={clsx(styles.productImg, styles.newFashionBagChairsImg)}
                            />
@@ -624,7 +624,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.furnitureContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbFurnitureChairs)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.furnitureChairsImg)} />
                         </Link>
                      </Box>
@@ -646,7 +646,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.stylishWatchContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbStylishWatchChairs)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.stylishWatchChairsImg)} />
                         </Link>
                      </Box>
@@ -668,7 +668,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.antiqueVaseContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbAntiqueVaseChairs)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.antiqueVaseChairsImg)} />
                         </Link>
                      </Box>
@@ -690,7 +690,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.chairsMatContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbChairsMatChairs)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.chairsMatChairsImg)} />
                         </Link>
                      </Box>
@@ -712,7 +712,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.exquisiteVaseContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbExquisiteVaseChairs)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box
                               className={clsx(styles.productImg, styles.exquisiteVaseChairsImg)}
                            />
@@ -736,7 +736,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.lampShadeContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbLampShadeChairs)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.lampShadeChairsImg)} />
                         </Link>
                      </Box>
@@ -758,7 +758,7 @@ function HomePage() {
                <Box className={clsx(styles.productContainer, styles.accessoriesContainer)}>
                   <Box className={styles.product}>
                      <Box className={clsx(styles.productThumb, styles.thumbAccessoriesChairs)}>
-                        <Link to='/carts'>
+                        <Link to='/product'>
                            <Box className={clsx(styles.productImg, styles.accessoriesChairsImg)} />
                         </Link>
                      </Box>

@@ -79,7 +79,7 @@ export default makeStyles(theme => ({
    },
 
    main: {
-      padding: '72px 52px',
+      padding: '72px 52px 0px 72px',
    },
 
    // PRODUCT CONTENT TOP
@@ -268,6 +268,25 @@ export default makeStyles(theme => ({
       opacity: 1,
    },
 
+   thumbNextBtn: {
+      '&.MuiButtonBase-root': {
+         position: 'absolute',
+         top: '50%',
+         right: 0,
+         transform: 'translate(50%, -50%)',
+         background: theme.palette.primary.main,
+      },
+   },
+   thumbPrevBtn: {
+      '&.MuiButtonBase-root': {
+         position: 'absolute',
+         top: '50%',
+         left: 0,
+         transform: 'translate(-50%, -50%)',
+         background: theme.palette.primary.main,
+      },
+   },
+
    // PRODUCT CONTENT TOP - right
    productContentRight: {
       width: '50%',
@@ -337,11 +356,22 @@ export default makeStyles(theme => ({
       display: 'flex',
       height: 40,
    },
+   cartWrap2: {
+      width: '100%',
+      marginTop: 20,
+      '@media (min-width: 780px)': {
+         display: 'none',
+      },
+   },
    quantityWrap: {
       border: '1px solid #ccc',
       padding: '4px 0px',
       borderRadius: 4,
       whiteSpace: 'nowrap',
+      marginRight: 20,
+      '@media (max-width:780px)': {
+         marginRight: 8,
+      },
    },
    decQuantityBtn: {
       '&.MuiButton-root': {
@@ -382,9 +412,22 @@ export default makeStyles(theme => ({
          background: theme.palette.info.main,
          color: theme.palette.secondary.contrastText,
          padding: '0px 16px',
-         margin: '0px 14px 0px 24px',
          whiteSpace: 'nowrap',
+         marginRight: 10,
          minWidth: 132,
+      },
+   },
+   addToCartBtn1: {
+      '@media (max-width:780px)': {
+         '&.MuiButton-root': {
+            display: 'none',
+         },
+      },
+   },
+   addToCartBtn2: {
+      '&.MuiButton-root': {
+         width: '100%',
+         margin: 0,
       },
    },
    favBtn: {},
@@ -744,4 +787,219 @@ export default makeStyles(theme => ({
    accordionBrandImg: {
       width: '30%',
    },
+
+   // PRODUCT CONTENT BOTTOM - productIllustrations
+   productIllustrations: {
+      marginTop: 72,
+   },
+   prIllItem: {
+      width: '50%',
+      '@media(max-width: 1220px)': {
+         width: '100%',
+      },
+   },
+   prIllItemNoImg: {
+      '&.MuiGrid-root': {
+         padding: '56px 80px 56px 80px',
+         background: theme.palette.secondary.main,
+      },
+
+      '@media(max-width: 1220px)': {
+         height: 'auto',
+      },
+   },
+   prIllItemImg1: {
+      background: 'url(https://bom.so/ckz034)',
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat',
+      height: '100%',
+      width: '100%',
+      '@media(max-width: 1220px)': {
+         paddingTop: '65%',
+      },
+   },
+   prIllItemImg2: {
+      background: 'url(https://bom.so/lOOA1R)',
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat',
+      height: '100%',
+      width: '100%',
+      '@media(max-width: 1220px)': {
+         paddingTop: '65%',
+      },
+   },
+
+   prIllHeading: {
+      '&.MuiTypography-root': {
+         margin: '0px 0px 32px 0px !important',
+         fontSize: 50,
+         fontFamily: 'Montserrat, sans-serif !important',
+      },
+   },
+   prIllDesc: {
+      '&.MuiTypography-root': {
+         color: theme.palette.secondary.darkerText,
+         margin: '0px !important',
+         fontSize: 20,
+         fontFamily: 'Montserrat, sans-serif !important',
+      },
+   },
+
+   // PRODUCT CONTENT BOTTOM - relatedProductions
+   relatedProductions: {
+      marginTop: 72,
+   },
+   relativeProductHeading: {
+      '&.MuiTypography-root': {
+         fontSize: 28,
+         fontFamily: 'Montserrat, sans-serif !important',
+      },
+   },
+
+   relatedProducts: {
+      margin: '0px -20px',
+   },
+   relatedProductItem: {
+      display: 'inline-block',
+      width: '25%',
+      textAlign: 'center',
+      padding: 20,
+      '@media (max-width: 1220px)': {
+         width: 'calc(100%/3)',
+      },
+      '@media (max-width: 900px)': {
+         width: 'calc(100%/2)',
+      },
+      '@media (max-width: 600px)': {
+         width: '100%',
+      },
+   },
+   relatedProductItemInner: {
+      border: `1px solid ${theme.border.darker}`,
+   },
+   productThumb: {},
+   thumbStylishWatch: {
+      '&:hover': {
+         '& $stylishWatchImg': {
+            background: 'url(https://bom.so/WRopjS)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+         },
+      },
+   },
+   stylishWatchImg: {
+      background: 'url(https://bom.so/SgkcOm)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      width: '100%',
+      height: '100%',
+      transition: 'all 0.2s ease-in-out',
+      paddingTop: '150%',
+   },
+
+   thumbFloorLamp: {
+      '&:hover': {
+         '& $floorLampImg': {
+            background: 'url(https://bom.so/VIrV7e)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+         },
+      },
+   },
+   floorLampImg: {
+      background: 'url(https://bom.so/DpYAsS)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      width: '100%',
+      height: '100%',
+      transition: 'all 0.2s ease-in-out',
+      paddingTop: '150%',
+   },
+
+   thumbNewFashionBag: {
+      '&:hover': {
+         '& $newFashionBagImg': {
+            background: 'url(https://bom.so/NGx30C)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+         },
+      },
+   },
+   newFashionBagImg: {
+      background: 'url(https://bom.so/MpZ8BK)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      width: '100%',
+      height: '100%',
+      transition: 'all 0.2s ease-in-out',
+      paddingTop: '150%',
+   },
+
+   thumbHangingLamp: {
+      '&:hover': {
+         '& $hangingLampImg': {
+            background: 'url(https://bom.so/0nLpze)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+         },
+      },
+   },
+   hangingLampImg: {
+      background: 'url(https://bom.so/jHpz4g)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      width: '100%',
+      height: '100%',
+      transition: 'all 0.2s ease-in-out',
+      paddingTop: '150%',
+   },
+
+   productCaption: {
+      padding: 16,
+      height: 200,
+      color: theme.palette.secondary.darkerText,
+   },
+   ratingRelatedPr: {
+      '&.MuiRating-root': {
+         fontSize: 16,
+      },
+   },
+   relatedProductCategorie: {
+      fontSize: 9,
+      fontWeight: 'bold',
+      margin: '0px !important',
+      fontFamily: 'Montserrat, sans-serif !important',
+   },
+   relatedProductName: {
+      fontWeight: 'bold',
+      fontSize: 18,
+      margin: '8px 0px 2px 0px !important',
+   },
+   relatedProductPrice: {
+      margin: '0px 0px 6px 0px !important',
+      color: theme.palette.info.main,
+   },
+   relatedProductPrevPrice: {
+      fontSize: 14,
+      textDecoration: 'line-through',
+      opacity: 0.5,
+      marginRight: 4,
+   },
+   relatedProductCurPrice: {
+      fontSize: 16,
+   },
+   relatedPrFavBtn: {
+      '&.MuiButtonBase-root': {
+         padding: 10,
+         background: theme.palette.primary.light,
+      },
+   },
+   relatedPrFavIcon: {
+      '&.MuiSvgIcon-root': {
+         fontSize: 20,
+      },
+   },
+
+   // PRODUCT CONTENT BOTTOM - widget
+   widget: {},
 }))
