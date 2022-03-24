@@ -15,6 +15,9 @@ export default makeStyles(theme => ({
 
       position: 'fixed',
    },
+   headerScroll: {
+      opacity: 0.8,
+   },
 
    toolbar: {
       display: 'flex',
@@ -92,32 +95,6 @@ export default makeStyles(theme => ({
    },
 
    notificationDialog: {},
-   notify: {
-      width: 350,
-   },
-
-   notifyThumb: {
-      '&.MuiCardMedia-root': {
-         width: 'auto',
-      },
-      width: 60,
-      height: 60,
-      borderRadius: 4,
-   },
-   notifyContent: {
-      padding: '0px 16px',
-      overflowX: 'scroll',
-   },
-   notifyTitle: {
-      '&.MuiTypography-root': {
-         fontSize: 18,
-      },
-   },
-   notifyDesc: {
-      '&.MuiTypography-root': {
-         fontSize: 14,
-      },
-   },
 
    navModal: {
       display: 'none',

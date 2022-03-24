@@ -8,8 +8,6 @@ function ScrollToTopButton() {
    const styles = useStyles()
    const [visible, setVisible] = useState(false)
 
-   console.log('ScrollToTopButton')
-
    const toggleVisible = () => {
       const scrolled = document.documentElement.scrollTop
       if (scrolled > 150) {

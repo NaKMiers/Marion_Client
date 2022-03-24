@@ -1,10 +1,6 @@
 import { makeStyles } from '@mui/styles'
 
 export default makeStyles(theme => ({
-   notificationPage: {
-      margin: 'auto',
-      maxWidth: 1500,
-   },
    pageTitle: {
       position: 'relative',
       width: '100%',
@@ -66,54 +62,5 @@ export default makeStyles(theme => ({
    },
    link: {
       textDecoration: 'none',
-   },
-
-   notificationBody: {
-      padding: '24px 36px',
-      margin: 'auto',
-      minWidth: 280,
-   },
-
-   notificationList: {
-      border: `1px solid #ccc`,
-      '&.MuiList-root': {
-         padding: 0,
-      },
-   },
-   headingList: {
-      textAlign: 'right',
-      padding: '8px 16px',
-      borderBottom: '1px solid #ccc',
-   },
-   markReaded: {
-      display: 'inline-block',
-      color: theme.palette.info.main,
-      cursor: 'pointer',
-      '&.MuiTypography-root': {
-         marginRight: -22,
-         transition: 'all 0.1s ease-in-out',
-      },
-      '&:hover': {
-         color: theme.palette.secondary.lightText,
-      },
-   },
-   markReadedActive: {
-      color: theme.palette.secondary.lightText,
-      '&.MuiTypography-root': {
-         marginRight: 0,
-      },
-   },
-   markReadedIcon: {
-      marginBottom: -4,
-      marginLeft: 4,
-      '&.MuiSvgIcon-root': {
-         fontSize: 20,
-         transition: 'all 0.1s ease-in-out',
-      },
-      color: theme.palette.info.main,
-      opacity: 0,
-   },
-   markReadedIconActive: {
-      opacity: 1,
    },
 }))

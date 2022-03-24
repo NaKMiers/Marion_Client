@@ -13,7 +13,6 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import {
    Avatar,
-   CardMedia,
    Collapse,
    List,
    ListItemAvatar,
@@ -33,8 +32,9 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import clsx from 'clsx'
 import { useEffect, useState } from 'react'
-import useStyles from './styles'
 import { Link } from 'react-router-dom'
+import Notify from '../Notify'
+import useStyles from './styles'
 
 function Header() {
    const [isShowNavModal, setShowNavModal] = useState(false)
@@ -45,7 +45,6 @@ function Header() {
    const styles = useStyles()
 
    const handleShowNav = () => {
-      console.log('handleShowNav')
       setShowNavModal(prev => !prev)
    }
 
@@ -80,10 +79,8 @@ function Header() {
       }
    }, [])
 
-   console.log('scrollPosition: ', scrollPosition)
-
    return (
-      <AppBar className={styles.header}>
+      <AppBar className={clsx(styles.header, { [styles.headerScroll]: scrollPosition })}>
          <Toolbar className={clsx(styles.toolbar, { [styles.tollbarScroll]: scrollPosition })}>
             <Typography className={clsx(styles.logo, { [styles.logoScroll]: scrollPosition })}>
                <Link to='/'>Marion</Link>
@@ -123,32 +120,9 @@ function Header() {
                      className={styles.notificationDialog}
                      style={{ top: scrollPosition === 0 ? 10 : 12 }}
                   >
-                     <MenuItem onClick={handleCloseNotify} className={styles.notify}>
-                        <CardMedia
-                           className={styles.notifyThumb}
-                           component='img'
-                           image='https://bom.so/EKb8Yx'
-                           alt='thumb'
-                        />
-                        <Box className={styles.notifyContent}>
-                           <Typography className={styles.notifyTitle}>
-                              Notify 1awdawdawdawdawdawdawdawdawdawdawdawdawdawd
-                           </Typography>
-                           <Typography className={styles.notifyDesc}>Description 1</Typography>
-                        </Box>
-                     </MenuItem>
-                     <MenuItem onClick={handleCloseNotify} className={styles.notify}>
-                        <CardMedia
-                           className={styles.notifyThumb}
-                           component='img'
-                           image='https://bom.so/EKb8Yx'
-                           alt='thumb'
-                        />
-                        <Box className={styles.notifyContent}>
-                           <Typography className={styles.notifyTitle}>Notify 1</Typography>
-                           <Typography className={styles.notifyDesc}>Description 1</Typography>
-                        </Box>
-                     </MenuItem>
+                     <Notify inHeader />
+                     <Notify inHeader />
+                     <Notify inHeader />
                   </Menu>
 
                   <IconButton className={styles.iconAvtBtn} onClick={handleMenuAvt}>

@@ -13,6 +13,7 @@ import WindowIcon from '@mui/icons-material/Window'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 
 import {
    Accordion,
@@ -47,24 +48,6 @@ import CachedIcon from '@mui/icons-material/Cached'
 import NavigateNextIcon from '@mui/icons-material/NavigateNext'
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore'
 
-function TabPanel({ children, value, index, ...other }) {
-   return (
-      <div
-         role='tabpanel'
-         hidden={value !== index}
-         id={`simple-tabpanel-${index}`}
-         aria-labelledby={`simple-tab-${index}`}
-         {...other}
-      >
-         {value === index && (
-            <Box sx={{ p: 3 }}>
-               <Typography>{children}</Typography>
-            </Box>
-         )}
-      </div>
-   )
-}
-
 function ProductPage() {
    const styles = useStyles()
 
@@ -86,7 +69,7 @@ function ProductPage() {
    return (
       <Box className={styles.productPage}>
          <Box className={styles.pageTitle}>
-            <Typography className={styles.title}>
+            <Box className={styles.title}>
                <span className={styles.title1}>LOUNGE</span>{' '}
                <span className={styles.title2}>WOODEN CHAIRS</span>
                <Typography className={styles.subtitle}>
@@ -95,7 +78,7 @@ function ProductPage() {
                      exercitation tempor incididunt!
                   </span>
                </Typography>
-            </Typography>
+            </Box>
             <Box className={styles.navigator}>
                <Link to='/' className={styles.link}>
                   <Typography className={styles.nav1}>Home</Typography>
@@ -191,12 +174,12 @@ function ProductPage() {
                   </Typography>
                   <Box className={clsx(styles.cartWrap, styles.cartWrap1)}>
                      <Box className={styles.quantityWrap}>
-                        <Button className={styles.decQuantityBtn}>
-                           <MinusIcon className={styles.decIcon} />
+                        <Button className={styles.quantityBtn}>
+                           <MinusIcon className={styles.quantityIcon} />
                         </Button>
                         <input className={styles.quantityInput} type='text' />
-                        <Button className={styles.incQuantityBtn}>
-                           <PlusIcon className={styles.incIcon} />
+                        <Button className={styles.quantityBtn}>
+                           <PlusIcon className={styles.quantityIcon} />
                         </Button>
                      </Box>
 
@@ -205,8 +188,8 @@ function ProductPage() {
                      </Button>
 
                      <IconButton className={styles.favBtn}>
-                        {/* <FavoriteBorderIcon className={styles.favIcon} /> */}
-                        <FavoriteIcon className={styles.favIcon} />
+                        <FavoriteBorderIcon className={styles.favIcon} />
+                        {/* <FavoriteIcon className={styles.favIcon} /> */}
                      </IconButton>
                   </Box>
                   <Box className={clsx(styles.cartWrap, styles.cartWrap2)}>
@@ -231,7 +214,7 @@ function ProductPage() {
                   </Box>
                   <Typography className={styles.share}>
                      Share:
-                     <Box className={styles.socialLinkWrapper}>
+                     <span className={styles.socialLinkWrapper}>
                         <a
                            href='https://www.facebook.com/'
                            target='_blank'
@@ -280,7 +263,7 @@ function ProductPage() {
                         >
                            <PinterestIcon className={styles.socialIcon} />
                         </a>
-                     </Box>
+                     </span>
                   </Typography>
                </Box>
             </Box>
@@ -293,173 +276,184 @@ function ProductPage() {
                      <Tab label='REVIEWS' className={styles.tabHeading} />
                   </Tabs>
 
-                  <TabPanel value={tabValue} index={0} className={styles.tabPanel}>
-                     <Typography className={styles.descriptionBottom}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                     </Typography>
-                     <Grid container spacing={2}>
-                        <Grid item md={4} xs={12} className={styles.descItem}>
-                           <BeachAccessIcon className={clsx(styles.descIcon, styles.descIcon1)} />
-                           <Typography className={styles.descItemText}>
-                              Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
-                           </Typography>
+                  {tabValue === 0 ? (
+                     <Box className={styles.tabPanel}>
+                        <Typography className={styles.descriptionBottom}>
+                           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                           veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                           commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                           velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                           occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                           mollit anim id est laborum.
+                        </Typography>
+                        <Grid container spacing={2}>
+                           <Grid item md={4} xs={12} className={styles.descItem}>
+                              <BeachAccessIcon
+                                 className={clsx(styles.descIcon, styles.descIcon1)}
+                              />
+                              <Typography className={styles.descItemText}>
+                                 Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
+                              </Typography>
+                           </Grid>
+                           <Grid item md={4} xs={12} className={styles.descItem}>
+                              <SpeedIcon className={clsx(styles.descIcon, styles.descIcon2)} />
+                              <Typography className={styles.descItemText}>
+                                 Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
+                              </Typography>
+                           </Grid>
+                           <Grid item md={4} xs={12} className={styles.descItem}>
+                              <EventNoteIcon className={clsx(styles.descIcon, styles.descIcon3)} />
+                              <Typography className={styles.descItemText}>
+                                 Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
+                              </Typography>
+                           </Grid>
+                           <Grid item md={4} xs={12} className={styles.descItem}>
+                              <ContentCutIcon className={clsx(styles.descIcon, styles.descIcon4)} />
+                              <Typography className={styles.descItemText}>
+                                 Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
+                              </Typography>
+                           </Grid>
+                           <Grid item md={4} xs={12} className={styles.descItem}>
+                              <CardGiftcardIcon
+                                 className={clsx(styles.descIcon, styles.descIcon5)}
+                              />
+                              <Typography className={styles.descItemText}>
+                                 Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
+                              </Typography>
+                           </Grid>
+                           <Grid item md={4} xs={12} className={styles.descItem}>
+                              <CachedIcon className={clsx(styles.descIcon, styles.descIcon6)} />
+                              <Typography className={styles.descItemText}>
+                                 Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
+                              </Typography>
+                           </Grid>
                         </Grid>
-                        <Grid item md={4} xs={12} className={styles.descItem}>
-                           <SpeedIcon className={clsx(styles.descIcon, styles.descIcon2)} />
-                           <Typography className={styles.descItemText}>
-                              Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
-                           </Typography>
-                        </Grid>
-                        <Grid item md={4} xs={12} className={styles.descItem}>
-                           <EventNoteIcon className={clsx(styles.descIcon, styles.descIcon3)} />
-                           <Typography className={styles.descItemText}>
-                              Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
-                           </Typography>
-                        </Grid>
-                        <Grid item md={4} xs={12} className={styles.descItem}>
-                           <ContentCutIcon className={clsx(styles.descIcon, styles.descIcon4)} />
-                           <Typography className={styles.descItemText}>
-                              Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
-                           </Typography>
-                        </Grid>
-                        <Grid item md={4} xs={12} className={styles.descItem}>
-                           <CardGiftcardIcon className={clsx(styles.descIcon, styles.descIcon5)} />
-                           <Typography className={styles.descItemText}>
-                              Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
-                           </Typography>
-                        </Grid>
-                        <Grid item md={4} xs={12} className={styles.descItem}>
-                           <CachedIcon className={clsx(styles.descIcon, styles.descIcon6)} />
-                           <Typography className={styles.descItemText}>
-                              Lorem ipsum dolor sit ametcon sectetur adipisicing elit sed.
-                           </Typography>
-                        </Grid>
-                     </Grid>
-                  </TabPanel>
-                  <TabPanel value={tabValue} index={1} className={styles.tabPanel}>
-                     <table className={styles.addtionalInfoTable}>
-                        <tbody>
-                           <tr>
-                              <th className={styles.tableHeading}>Weight</th>
-                              <td>0.5 kg</td>
-                           </tr>
-                           <tr>
-                              <th className={styles.tableHeading}>Demensions</th>
-                              <td>35 x 20 x 56 cm</td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </TabPanel>
-                  <TabPanel value={tabValue} index={2} className={styles.tabPanel}>
-                     <Box className={styles.reviewPanelWrap}>
-                        <Box className={styles.otherReviews}>
-                           <Typography className={styles.tablePanelHeading}>REVIEWS</Typography>
-                           <List className={styles.reviewList}>
-                              <ListItem alignItems='flex-start'>
-                                 <ListItemAvatar>
-                                    <Avatar alt='Remy Sharp' src='https://bom.so/oM1Xmz' />
-                                 </ListItemAvatar>
-                                 <ListItemText
-                                    primary='Brunch this weekend?'
-                                    secondary={
-                                       <>
-                                          <Typography
-                                             sx={{ display: 'inline' }}
-                                             component='span'
-                                             variant='body2'
-                                             color='text.primary'
-                                          >
-                                             Ali Connors
-                                          </Typography>
-                                          {" — I'll be in your neighborhood doing errands this…"}
-                                       </>
-                                    }
-                                 />
-                              </ListItem>
-                              <Divider variant='inset' component='li' />
-                              <ListItem alignItems='flex-start'>
-                                 <ListItemAvatar>
-                                    <Avatar alt='Travis Howard' src='https://bom.so/oM1Xmz' />
-                                 </ListItemAvatar>
-                                 <ListItemText
-                                    primary='Summer BBQ'
-                                    secondary={
-                                       <>
-                                          <Typography
-                                             sx={{ display: 'inline' }}
-                                             component='span'
-                                             variant='body2'
-                                             color='text.primary'
-                                          >
-                                             to Scott, Alex, Jennifer
-                                          </Typography>
-                                          {" — Wish I could come, but I'm out of town this…"}
-                                       </>
-                                    }
-                                 />
-                              </ListItem>
-                              <Divider variant='inset' component='li' />
-                              <ListItem alignItems='flex-start'>
-                                 <ListItemAvatar>
-                                    <Avatar alt='Cindy Baker' src='https://bom.so/oM1Xmz' />
-                                 </ListItemAvatar>
-                                 <ListItemText
-                                    primary='Oui Oui'
-                                    secondary={
-                                       <>
-                                          <Typography
-                                             sx={{ display: 'inline' }}
-                                             component='span'
-                                             variant='body2'
-                                             color='text.primary'
-                                          >
-                                             Sandra Adams
-                                          </Typography>
-                                          {' — Do you have Paris recommendations? Have you ever…'}
-                                       </>
-                                    }
-                                 />
-                              </ListItem>
-                           </List>
-                        </Box>
+                     </Box>
+                  ) : tabValue === 1 ? (
+                     <Box className={styles.tabPanel}>
+                        <table className={styles.addtionalInfoTable}>
+                           <tbody>
+                              <tr>
+                                 <th className={styles.tableHeading}>Weight</th>
+                                 <td>0.5 kg</td>
+                              </tr>
+                              <tr>
+                                 <th className={styles.tableHeading}>Demensions</th>
+                                 <td>35 x 20 x 56 cm</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </Box>
+                  ) : (
+                     <Box className={styles.tabPanel}>
+                        <Box className={styles.reviewPanelWrap}>
+                           <Box className={styles.otherReviews}>
+                              <Typography className={styles.tablePanelHeading}>REVIEWS</Typography>
+                              <List className={styles.reviewList}>
+                                 <ListItem alignItems='flex-start'>
+                                    <ListItemAvatar>
+                                       <Avatar alt='Remy Sharp' src='https://bom.so/oM1Xmz' />
+                                    </ListItemAvatar>
+                                    <ListItemText
+                                       primary='Brunch this weekend?'
+                                       secondary={
+                                          <>
+                                             <Typography
+                                                sx={{ display: 'inline' }}
+                                                component='span'
+                                                variant='body2'
+                                                color='text.primary'
+                                             >
+                                                Ali Connors
+                                             </Typography>
+                                             {" — I'll be in your neighborhood doing errands this…"}
+                                          </>
+                                       }
+                                    />
+                                 </ListItem>
+                                 <Divider variant='inset' component='li' />
+                                 <ListItem alignItems='flex-start'>
+                                    <ListItemAvatar>
+                                       <Avatar alt='Travis Howard' src='https://bom.so/oM1Xmz' />
+                                    </ListItemAvatar>
+                                    <ListItemText
+                                       primary='Summer BBQ'
+                                       secondary={
+                                          <>
+                                             <Typography
+                                                sx={{ display: 'inline' }}
+                                                component='span'
+                                                variant='body2'
+                                                color='text.primary'
+                                             >
+                                                to Scott, Alex, Jennifer
+                                             </Typography>
+                                             {" — Wish I could come, but I'm out of town this…"}
+                                          </>
+                                       }
+                                    />
+                                 </ListItem>
+                                 <Divider variant='inset' component='li' />
+                                 <ListItem alignItems='flex-start'>
+                                    <ListItemAvatar>
+                                       <Avatar alt='Cindy Baker' src='https://bom.so/oM1Xmz' />
+                                    </ListItemAvatar>
+                                    <ListItemText
+                                       primary='Oui Oui'
+                                       secondary={
+                                          <>
+                                             <Typography
+                                                sx={{ display: 'inline' }}
+                                                component='span'
+                                                variant='body2'
+                                                color='text.primary'
+                                             >
+                                                Sandra Adams
+                                             </Typography>
+                                             {
+                                                ' — Do you have Paris recommendations? Have you ever…'
+                                             }
+                                          </>
+                                       }
+                                    />
+                                 </ListItem>
+                              </List>
+                           </Box>
 
-                        <Box className={styles.myReivew}>
-                           <Typography className={styles.tablePanelHeading}>
-                              ADD A REVIEW
-                           </Typography>
-                           <Typography>Rating *</Typography>
-                           <Rating
-                              name='simple-controlled'
-                              value={ratingValue}
-                              onChange={(event, newValue) => {
-                                 setRatingValue(newValue)
-                              }}
-                           />
+                           <Box className={styles.myReivew}>
+                              <Typography className={styles.tablePanelHeading}>
+                                 ADD A REVIEW
+                              </Typography>
+                              <Typography>Rating *</Typography>
+                              <Rating
+                                 name='simple-controlled'
+                                 value={ratingValue}
+                                 onChange={(event, newValue) => {
+                                    setRatingValue(newValue)
+                                 }}
+                              />
 
-                           <p>My Review *</p>
-                           <textarea className={styles.myReviewInput}></textarea>
+                              <p>My Review *</p>
+                              <textarea className={styles.myReviewInput}></textarea>
 
-                           <p>Name *</p>
-                           <input className={styles.myReviewInfoInput} />
+                              <p>Name *</p>
+                              <input className={styles.myReviewInfoInput} />
 
-                           <p>Email *</p>
-                           <input className={styles.myReviewInfoInput} />
-                           <p />
-                           <Box className={styles.saveInfoReviewBtnWrap}>
-                              <Checkbox color='success' className={styles.saveInfoReviewBtn} />
-                              <p className={styles.text}>
-                                 Save my name, email, and website in this browser for the next time
-                                 i commnemt.
-                              </p>
+                              <p>Email *</p>
+                              <input className={styles.myReviewInfoInput} />
+                              <p />
+                              <Box className={styles.saveInfoReviewBtnWrap}>
+                                 <Checkbox color='success' className={styles.saveInfoReviewBtn} />
+                                 <p className={styles.text}>
+                                    Save my name, email, and website in this browser for the next
+                                    time i commnemt.
+                                 </p>
+                              </Box>
                            </Box>
                         </Box>
                      </Box>
-                  </TabPanel>
+                  )}
                </Box>
 
                <Box className={styles.coupon}>
@@ -764,8 +758,6 @@ function ProductPage() {
                      </Box>
                   </Box>
                </Box>
-
-               <Box className={styles.widget}></Box>
             </Box>
          </Box>
       </Box>

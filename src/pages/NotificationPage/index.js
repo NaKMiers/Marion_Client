@@ -1,11 +1,9 @@
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
-import ClearIcon from '@mui/icons-material/Clear'
 import DoneIcon from '@mui/icons-material/Done'
-import NotificationsIcon from '@mui/icons-material/Notifications'
-import { Box, CardMedia, List, ListItemButton, Typography } from '@mui/material'
+import { Box, List, Typography } from '@mui/material'
 import clsx from 'clsx'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import Notify from '../../components/Notify'
+import PageTitle from '../../components/PageTitle'
 import useStyles from './styles'
 
 function NotificationPage() {
@@ -15,21 +13,7 @@ function NotificationPage() {
 
    return (
       <Box className={styles.notificationPage}>
-         <Box className={styles.pageTitle}>
-            <Typography className={styles.title}>
-               <span className={styles.title2}>NOTIFICATIONS</span>
-            </Typography>
-            <Box className={styles.pageIconWrap}>
-               <NotificationsIcon className={styles.pageIcon} />
-            </Box>
-            <Box className={styles.navigator}>
-               <Link to='/' className={styles.link}>
-                  <Typography className={styles.nav1}>Home</Typography>
-               </Link>
-               <ArrowRightAltIcon className={styles.navArrowIcon} />
-               <Typography className={styles.nav2}>Notifications</Typography>
-            </Box>
-         </Box>
+         <PageTitle page='notifications' />
 
          <Box className={styles.notificationBody}>
             <List className={styles.notificationList}>
@@ -46,45 +30,8 @@ function NotificationPage() {
                      })}
                   />
                </Box>
-               <ListItemButton className={styles.notify}>
-                  <Box className={styles.notifyThumbWrap}>
-                     <CardMedia
-                        alt='thumb'
-                        image='https://bom.so/EKb8Yx'
-                        component='img'
-                        className={styles.notifyThumb}
-                     />
-                  </Box>
-                  <Box className={styles.notifyContent}>
-                     <Typography className={styles.notifyTitle}>Summer BBQ</Typography>
-                     <Typography className={styles.notifyDesc}>
-                        Wish I could come, but I'm out of town this Wish I could come, but I'm out
-                        Wish I could come, but I'm out of town this of town this
-                     </Typography>
-                  </Box>
-                  <Box className={styles.removeBtn}>
-                     <ClearIcon className={styles.removeIcon} />
-                  </Box>
-               </ListItemButton>
-               <ListItemButton className={styles.notify}>
-                  <Box className={styles.notifyThumbWrap}>
-                     <CardMedia
-                        alt='thumb'
-                        image='https://bom.so/EKb8Yx'
-                        component='img'
-                        className={styles.notifyThumb}
-                     />
-                  </Box>
-                  <Box className={styles.notifyContent}>
-                     <Typography className={styles.notifyTitle}>Summer BBQ</Typography>
-                     <Typography className={styles.notifyDesc}>
-                        Wish I could come, but I'm out of town this…
-                     </Typography>
-                  </Box>
-                  <Box className={styles.removeBtn}>
-                     <ClearIcon className={styles.removeIcon} />
-                  </Box>
-               </ListItemButton>
+
+               <Notify />
             </List>
          </Box>
       </Box>

@@ -20,21 +20,17 @@ export default makeStyles(theme => ({
    },
 
    title: {
-      '&.MuiTypography-root': {
-         position: 'absolute',
-         textAlign: 'center',
-         width: '100%',
-         top: '35%',
-         left: '50%',
-         transform: 'translate(-50%, -50%)',
-         fontSize: 48,
-         padding: '0px 16px',
-         color: theme.palette.secondary.darkerText,
-      },
+      position: 'absolute',
+      textAlign: 'center',
+      width: '100%',
+      top: '44%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      fontSize: 48,
+      padding: '0px 16px',
+      color: theme.palette.secondary.darkerText,
       '@media (max-width: 600px)': {
-         '&.MuiTypography-root': {
-            fontSize: '8vw',
-         },
+         fontSize: '8vw',
       },
    },
    title1: {
@@ -373,15 +369,15 @@ export default makeStyles(theme => ({
          marginRight: 8,
       },
    },
-   decQuantityBtn: {
+   quantityBtn: {
       '&.MuiButton-root': {
          margin: -10,
       },
    },
-   decIcon: {
+   quantityIcon: {
       '&.MuiSvgIcon-root': {
          fontSize: 18,
-         color: theme.palette.secondary.lightTextHover,
+         color: theme.palette.info.main,
       },
    },
    quantityInput: {
@@ -394,17 +390,6 @@ export default makeStyles(theme => ({
       border: 'none',
       borderLeft: '1px solid #ccc',
       borderRight: '1px solid #ccc',
-   },
-   incQuantityBtn: {
-      '&.MuiButton-root': {
-         margin: -10,
-      },
-   },
-   incIcon: {
-      '&.MuiSvgIcon-root': {
-         fontSize: 18,
-         color: theme.palette.secondary.lightTextHover,
-      },
    },
 
    addToCartBtn: {
@@ -539,7 +524,12 @@ export default makeStyles(theme => ({
          color: theme.palette.secondary.darkerText,
       },
    },
-   tabPanel: {},
+   tabPanel: {
+      padding: '24px 0px',
+   },
+   descriptionBottom: {
+      margin: '0px !important',
+   },
    descItem: {
       display: 'flex',
       justifyContent: 'center',

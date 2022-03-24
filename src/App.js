@@ -11,10 +11,7 @@ import routes from './routes'
 
 function App() {
    useEffect(() => {
-      window.addEventListener('scroll', () => {
-         const scrolled = document.documentElement.scrollTop
-         console.log('scrollPoint: ', scrolled)
-      })
+      window.addEventListener('scroll', () => {})
    }, [])
 
    return (
