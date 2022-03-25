@@ -8,7 +8,7 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import { Box, IconButton, TextField, Typography } from '@mui/material'
 import clsx from 'clsx'
-import { useRef } from 'react'
+import { memo, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import PageTitle from '../../components/PageTitle'
 import WishlistProduct from '../../components/WishlistProduct'
@@ -131,4 +131,4 @@ function WishlistPage() {
    )
 }
 
-export default WishlistPage
+export default memo(WishlistPage)

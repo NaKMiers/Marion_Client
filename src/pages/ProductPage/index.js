@@ -36,7 +36,7 @@ import {
    Typography,
 } from '@mui/material'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useStyles from './styles'
 import BeachAccessIcon from '@mui/icons-material/BeachAccess'
@@ -182,11 +182,10 @@ function ProductPage() {
                            <PlusIcon className={styles.quantityIcon} />
                         </Button>
                      </Box>
-
                      <Button className={clsx(styles.addToCartBtn, styles.addToCartBtn1)}>
                         ADD TO CARD
                      </Button>
-
+                     SS
                      <IconButton className={styles.favBtn}>
                         <FavoriteBorderIcon className={styles.favIcon} />
                         {/* <FavoriteIcon className={styles.favIcon} /> */}
@@ -764,4 +763,4 @@ function ProductPage() {
    )
 }
 
-export default ProductPage
+export default memo(ProductPage)

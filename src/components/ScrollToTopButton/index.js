@@ -1,7 +1,7 @@
 import { Fab } from '@mui/material'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import useStyles from './styles'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import clsx from 'clsx'
 
 function ScrollToTopButton() {
@@ -40,4 +40,4 @@ function ScrollToTopButton() {
    )
 }
 
-export default ScrollToTopButton
+export default memo(ScrollToTopButton)

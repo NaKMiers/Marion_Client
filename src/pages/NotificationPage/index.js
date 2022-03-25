@@ -1,7 +1,7 @@
 import DoneIcon from '@mui/icons-material/Done'
 import { Box, List, Typography } from '@mui/material'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import Notify from '../../components/Notify'
 import PageTitle from '../../components/PageTitle'
 import useStyles from './styles'
@@ -38,4 +38,4 @@ function NotificationPage() {
    )
 }
 
-export default NotificationPage
+export default memo(NotificationPage)

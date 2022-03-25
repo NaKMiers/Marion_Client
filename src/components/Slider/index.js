@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import useStyles from './styles'
 
 function Slider() {
@@ -112,4 +112,4 @@ function Slider() {
    )
 }
 
-export default Slider
+export default memo(Slider)

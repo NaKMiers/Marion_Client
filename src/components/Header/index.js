@@ -31,7 +31,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import clsx from 'clsx'
-import { useEffect, useState } from 'react'
+import { memo, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Notify from '../Notify'
 import useStyles from './styles'
@@ -103,14 +103,14 @@ function Header() {
                   <Link to='/carts'>
                      <IconButton className={styles.iconBtn}>
                         <Badge badgeContent={4} color='warning'>
-                           <ShoppingCartIcon />
+                           <ShoppingCartIcon className={styles.navIcon} />
                         </Badge>
                      </IconButton>
                   </Link>
 
                   <IconButton className={styles.iconBtn} onClick={handleMenuNotify}>
                      <Badge badgeContent={17} color='error'>
-                        <NotificationsIcon />
+                        <NotificationsIcon className={styles.navIcon} />
                      </Badge>
                   </IconButton>
                   <Menu
@@ -140,7 +140,7 @@ function Header() {
                         </Link>
                      </MenuItem>
                      <MenuItem onClick={handleCloseAvt}>
-                        <Link to='/purchase-order' className={styles.link}>
+                        <Link to='/purchase-orders' className={styles.link}>
                            Purchase Order
                         </Link>
                      </MenuItem>
@@ -318,4 +318,4 @@ function Header() {
    )
 }
 
-export default Header
+export default memo(Header)

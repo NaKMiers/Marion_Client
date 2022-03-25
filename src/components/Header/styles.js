@@ -169,6 +169,7 @@ export default makeStyles(theme => ({
    navIcon: {
       '&.MuiSvgIcon-root': {
          fontSize: 26,
+         color: theme.palette.secondary.lightTextHover,
       },
    },
 

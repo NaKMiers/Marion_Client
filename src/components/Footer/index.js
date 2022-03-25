@@ -8,6 +8,7 @@ import PinterestIcon from '@mui/icons-material/Pinterest'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import YouTubeIcon from '@mui/icons-material/YouTube'
 import { Link } from 'react-router-dom'
+import { memo } from 'react'
 
 function Footer() {
    const styles = useStyles()
@@ -158,4 +159,4 @@ function Footer() {
    )
 }
 
-export default Footer
+export default memo(Footer)

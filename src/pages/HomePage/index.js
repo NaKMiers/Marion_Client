@@ -3,7 +3,7 @@ import EqualizerIcon from '@mui/icons-material/Equalizer'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { Box, Button, Menu, MenuItem } from '@mui/material'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Sidebar from '../../components/Sidebar'
 import Slider from '../../components/Slider'
@@ -374,4 +374,4 @@ function HomePage() {
    )
 }
 
-export default HomePage
+export default memo(HomePage)

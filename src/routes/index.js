@@ -5,6 +5,7 @@ import WishlistPage from '../pages/WishlistPage'
 import NotificationPage from '../pages/NotificationPage'
 import CartPage from '../pages/CartPage'
 import ProductPage from '../pages/ProductPage'
+import PurchaseOrderPage from '../pages/PurchaseOrders'
 
 const routes = [
    {
@@ -31,6 +32,11 @@ const routes = [
       path: '/product',
       exact: false,
       component: () => <ProductPage />,
+   },
+   {
+      path: '/purchase-orders',
+      exact: false,
+      component: () => <PurchaseOrderPage />,
    },
    {
       path: '/',

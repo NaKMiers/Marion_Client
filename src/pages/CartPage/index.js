@@ -1,6 +1,7 @@
 import InfoIcon from '@mui/icons-material/Info'
 import { Box, Typography } from '@mui/material'
 import clsx from 'clsx'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import CartProduct from '../../components/CartProduct'
 import PageTitle from '../../components/PageTitle'
@@ -58,4 +59,4 @@ function CartPage() {
    )
 }
 
-export default CartPage
+export default memo(CartPage)

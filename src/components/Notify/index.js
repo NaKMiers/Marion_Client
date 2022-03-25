@@ -1,6 +1,7 @@
 import ClearIcon from '@mui/icons-material/Clear'
 import { Box, CardMedia, ListItemButton, Typography } from '@mui/material'
 import MenuItem from '@mui/material/MenuItem'
+import { memo } from 'react'
 import useStyles from './styles'
 
 function Notify({ inHeader, handleCloseNotify }) {
@@ -45,4 +46,4 @@ function Notify({ inHeader, handleCloseNotify }) {
    )
 }
 
-export default Notify
+export default memo(Notify)

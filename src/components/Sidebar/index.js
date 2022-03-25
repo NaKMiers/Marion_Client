@@ -12,7 +12,7 @@ import {
    Typography,
 } from '@mui/material'
 import clsx from 'clsx'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import useStyles from './styles'
 
 function Sidebar({ positionDrawer, toggleDrawer }) {
@@ -312,4 +312,4 @@ function Sidebar({ positionDrawer, toggleDrawer }) {
    )
 }
 
-export default Sidebar
+export default memo(Sidebar)

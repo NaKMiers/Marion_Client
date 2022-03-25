@@ -3,6 +3,7 @@ import RemoveIcon from '@mui/icons-material/HighlightOff'
 import MinusIcon from '@mui/icons-material/Remove'
 import { Box, Button, IconButton } from '@mui/material'
 import clsx from 'clsx'
+import { memo } from 'react'
 import { Link } from 'react-router-dom'
 import useStyles from './styles'
 
@@ -117,4 +118,4 @@ function CartProduct({ product, rps }) {
    )
 }
 
-export default CartProduct
+export default memo(CartProduct)

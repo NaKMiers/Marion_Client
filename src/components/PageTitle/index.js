@@ -2,10 +2,11 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import NotificationsIcon from '@mui/icons-material/Notifications'
+import InventoryIcon from '@mui/icons-material/Inventory'
 import { Box, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import useStyles from './styles'
-import { Fragment, useRef } from 'react'
+import { Fragment, memo, useRef } from 'react'
 
 function PageTitle({ page }) {
    const setOfPageList = useRef([
@@ -22,6 +23,13 @@ function PageTitle({ page }) {
          title2: 'WISHLIST',
          pageIcon: styles => <FavoriteIcon className={styles.pageIcon} />,
          navigate: ['Wishlist'],
+      },
+      {
+         page: 'purchase-orders',
+         title1: 'MY',
+         title2: 'PURCHASE ORDERS',
+         pageIcon: styles => <InventoryIcon className={styles.pageIcon} />,
+         navigate: ['Purchase - orders'],
       },
       {
          page: 'notifications',
@@ -61,4 +69,4 @@ function PageTitle({ page }) {
    )
 }
 
-export default PageTitle
+export default memo(PageTitle)
