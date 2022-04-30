@@ -5,6 +5,7 @@ export default makeStyles(theme => ({
       position: 'relative',
       height: '45vw',
       maxHeight: 675,
+      overflow: 'hidden',
    },
 
    // SLIDE 1
@@ -24,12 +25,12 @@ export default makeStyles(theme => ({
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: '50% 0px',
-      animation: '$thumbSlide1Effect 2s ease-in-out',
-      transition: 'visibility 0s linear 2s',
+      animation: '$thumbSlide1Effect 1s ease-in-out',
+      transition: 'visibility 0s linear 1s',
    },
    thumbSlide1Out: {
       visibility: 'hidden',
-      animation: '$thumbSlide1OutEffect 2s ease-in-out',
+      animation: '$thumbSlide1OutEffect 1s ease-in-out',
    },
    '@keyframes thumbSlide1Effect': {
       from: {
@@ -48,22 +49,60 @@ export default makeStyles(theme => ({
       },
    },
 
-   designStyles1: {
+   slide1InfoWrap: {
+      background: '#333',
+      width: '35%',
+      height: '100%',
       position: 'absolute',
-      top: '36%',
-      right: '3%',
+      top: 0,
+      right: 0,
+      textAlign: 'center',
+      animation: '$slide1InfoWrapEffect 1s ease-in-out',
+   },
+   slide1InfoWrapOut: {
+      animation: '$slide1InfoWrapOutEffect 1s ease-in-out',
+   },
+   '@keyframes slide1InfoWrapEffect': {
+      from: {
+         right: '-35%',
+         opacity: 0,
+      },
+      to: {
+         right: 0,
+         opacity: 1,
+      },
+   },
+   '@keyframes slide1InfoWrapOutEffect': {
+      from: {
+         right: 0,
+         opacity: 1,
+      },
+      to: {
+         right: '-35%',
+         opacity: 0,
+      },
+   },
+
+   designStyles1: {
+      maxWidth: '90%',
+      position: 'absolute',
+      top: '32%',
+      left: '10%',
       '&.MuiTypography-root': {
          fontFamily: 'Montserrat, sans-serif',
          fontSize: 21,
          color: theme.palette.secondary.lightTextHover,
          letterSpacing: 4,
       },
-      animation: '$designStyles1Effect 2s ease-in-out',
-      transition: 'visibility 0s linear 2.6s',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      animation: '$designStyles1Effect 1s ease-in-out',
+      // transition: 'visibility 0s linear 1.3s',
    },
    designStyles1Out: {
       visibility: 'hidden',
-      animation: '$designStyles1OutEffect 2.6s ease-in-out',
+      animation: '$designStyles1OutEffect 1.3s ease-in-out',
    },
    '@keyframes designStyles1Effect': {
       '0%': {
@@ -77,7 +116,7 @@ export default makeStyles(theme => ({
          opacity: 1,
       },
       '100%': {
-         top: '36%',
+         top: '32%',
       },
    },
    '@keyframes designStyles1OutEffect': {
@@ -98,21 +137,25 @@ export default makeStyles(theme => ({
    },
 
    productName1: {
+      maxWidth: '82%',
       position: 'absolute',
-      top: '38%',
-      right: '3%',
+      top: '35%',
+      right: '8%',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
       '&.MuiTypography-root': {
          fontSize: 38,
          color: theme.palette.secondary.darkerText,
          fontWeight: 'bold',
          letterSpacing: 2,
       },
-      animation: '$productName1Effect 2.2s ease-in-out',
-      transition: 'visibility 0s linear 2.4s',
+      animation: '$productName1Effect 1.05s ease-in-out',
+      // transition: 'visibility 0s linear 1.2s',
    },
    productName1Out: {
       visibility: 'hidden',
-      animation: '$productName1OutEffect 2.4s ease-in-out',
+      animation: '$productName1OutEffect 1.2s ease-in-out',
    },
    '@keyframes productName1Effect': {
       '0%': {
@@ -126,7 +169,7 @@ export default makeStyles(theme => ({
          opacity: 1,
       },
       '100%': {
-         top: '38%',
+         top: '35%',
       },
    },
    '@keyframes productName1OutEffect': {
@@ -147,22 +190,26 @@ export default makeStyles(theme => ({
    },
 
    price1: {
+      maxWidth: '82%',
       position: 'absolute',
-      top: '48%',
-      right: '3%',
+      top: '44%',
+      right: '8%',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
       '&.MuiTypography-root': {
          fontFamily: 'Montserrat, sans-serif',
-         fontSize: 42,
+         fontSize: 44,
          color: theme.palette.info.main,
          fontWeight: 'lighter',
          letterSpacing: 2,
       },
-      animation: '$price1Effect 2.4s ease-in-out',
-      transition: 'visibility 0s linear 2.2s',
+      animation: '$price1Effect 1.2s ease-in-out',
+      // transition: 'visibility 0s linear 1.05s',
    },
    price1Out: {
       visibility: 'hidden',
-      animation: '$price1OutEffect 2.2s ease-in-out',
+      animation: '$price1OutEffect 1.05s ease-in-out',
    },
    '@keyframes price1Effect': {
       '0%': {
@@ -176,7 +223,7 @@ export default makeStyles(theme => ({
          opacity: 1,
       },
       '100%': {
-         top: '48%',
+         top: '44%',
       },
    },
    '@keyframes price1OutEffect': {
@@ -197,9 +244,13 @@ export default makeStyles(theme => ({
    },
 
    type1: {
+      maxWidth: '82%',
       position: 'absolute',
-      top: '63%',
-      right: '3%',
+      top: '26%',
+      left: '10%',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
       '&.MuiTypography-root': {
          fontFamily: 'Montserrat, sans-serif',
          fontSize: 14,
@@ -207,26 +258,26 @@ export default makeStyles(theme => ({
          fontWeight: 'bold',
          letterSpacing: 2,
       },
-      animation: '$type1Effect 2.6s ease-in-out',
-      transition: 'visibility 0s linear 2s',
+      animation: '$type1Effect 1.3s ease-in-out',
+      // transition: 'visibility 0s linear 1s',
    },
    type1Out: {
       visibility: 'hidden',
-      animation: '$type1OutEffect 2s ease-in-out',
+      animation: '$type1OutEffect 1s ease-in-out',
    },
    '@keyframes type1Effect': {
       '0%': {
          opacity: 0,
       },
       '50%': {
-         top: '83%',
+         top: '0%',
          opacity: 0,
       },
       '80%': {
          opacity: 1,
       },
       '100%': {
-         top: '63%',
+         top: '26%',
       },
    },
    '@keyframes type1OutEffect': {
@@ -263,12 +314,12 @@ export default makeStyles(theme => ({
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: '50% 0px',
-      animation: '$thumbSlide2Effect 2s ease-in-out',
-      transition: 'visibility 0s linear 2s',
+      animation: '$thumbSlide2Effect 1s ease-in-out',
+      transition: 'visibility 0s linear 1s',
    },
    thumbSlide2Out: {
       visibility: 'hidden',
-      animation: '$thumbSlide2OutEffect 2s ease-in-out',
+      animation: '$thumbSlide2OutEffect 1s ease-in-out',
    },
    '@keyframes thumbSlide2Effect': {
       from: {
@@ -287,33 +338,71 @@ export default makeStyles(theme => ({
       },
    },
 
-   designStyles2: {
+   slide2InfoWrap: {
+      background: '#333',
+      width: '35%',
+      height: '100%',
       position: 'absolute',
-      top: '36%',
-      left: '3%',
+      top: 0,
+      left: 0,
+      textAlign: 'center',
+      animation: '$slide2InfoWrapEffect 1s ease-in-out',
+   },
+   slide2InfoWrapOut: {
+      animation: '$slide2InfoWrapOutEffect 1s ease-in-out',
+   },
+   '@keyframes slide2InfoWrapEffect': {
+      from: {
+         left: '-35%',
+         opacity: 0,
+      },
+      to: {
+         left: 0,
+         opacity: 1,
+      },
+   },
+   '@keyframes slide2InfoWrapOutEffect': {
+      from: {
+         right: 0,
+         opacity: 1,
+      },
+      to: {
+         right: '-35%',
+         opacity: 0,
+      },
+   },
+
+   designStyles2: {
+      maxWidth: '82%',
+      position: 'absolute',
+      top: '32%',
+      right: '10%',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
       '&.MuiTypography-root': {
          fontFamily: 'Montserrat, sans-serif',
          fontSize: 21,
          color: theme.palette.secondary.lightTextHover,
          letterSpacing: 4,
       },
-      animation: '$designStyles2Effect 2s ease-in-out',
-      transition: 'visibility 0s linear 2.6s',
+      animation: '$designStyles2Effect 1.3s ease-in-out',
+      // transition: 'visibility 0s linear 1.3s',
    },
    designStyles2Out: {
       visibility: 'hidden',
-      animation: '$designStyles2OutEffect 2.6s ease-in-out',
+      animation: '$designStyles2OutEffect 1.3s ease-in-out',
    },
    '@keyframes designStyles2Effect': {
       '0%': {
          opacity: 0,
-         left: '-50%',
+         right: '80%',
       },
       '60%': {
          opacity: 1,
       },
       '100%': {
-         left: '3%',
+         right: '10%',
       },
    },
    '@keyframes designStyles2OutEffect': {
@@ -331,21 +420,25 @@ export default makeStyles(theme => ({
    },
 
    productName2: {
+      maxWidth: '82%',
       position: 'absolute',
-      top: '38%',
-      left: '3%',
+      top: '35%',
+      left: '8%',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
       '&.MuiTypography-root': {
          fontSize: 38,
          color: theme.palette.secondary.darkerText,
          fontWeight: 'bold',
          letterSpacing: 2,
       },
-      animation: '$productName2Effect 2.2s ease-in-out',
-      transition: 'visibility 0s linear 2.4s',
+      animation: '$productName2Effect 1.4s ease-in-out',
+      // transition: 'visibility 0s linear 1.2s',
    },
    productName2Out: {
       visibility: 'hidden',
-      animation: '$productName2OutEffect 2.4s ease-in-out',
+      animation: '$productName2OutEffect 1.2s ease-in-out',
    },
    '@keyframes productName2Effect': {
       '0%': {
@@ -356,7 +449,7 @@ export default makeStyles(theme => ({
          opacity: 1,
       },
       '100%': {
-         left: '3%',
+         left: '8%',
       },
    },
    '@keyframes productName2OutEffect': {
@@ -374,9 +467,13 @@ export default makeStyles(theme => ({
    },
 
    price2: {
+      maxWidth: '82%',
       position: 'absolute',
-      top: '48%',
-      left: '3%',
+      top: '44%',
+      left: '8%',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
       '&.MuiTypography-root': {
          fontFamily: 'Montserrat, sans-serif',
          fontSize: 42,
@@ -384,12 +481,12 @@ export default makeStyles(theme => ({
          fontWeight: 'lighter',
          letterSpacing: 2,
       },
-      animation: '$price2Effect 2.4s ease-in-out',
-      transition: 'visibility 0s linear 2.2s',
+      animation: '$price2Effect 1.6s ease-in-out',
+      // transition: 'visibility 0s linear 1.05s',
    },
    price2Out: {
       visibility: 'hidden',
-      animation: '$price2OutEffect 2.2s ease-in-out',
+      animation: '$price2OutEffect 1.05s ease-in-out',
    },
    '@keyframes price2Effect': {
       '0%': {
@@ -400,7 +497,7 @@ export default makeStyles(theme => ({
          opacity: 1,
       },
       '100%': {
-         left: '3%',
+         left: '8%',
       },
    },
    '@keyframes price2OutEffect': {
@@ -418,9 +515,13 @@ export default makeStyles(theme => ({
    },
 
    type2: {
+      maxWidth: '82%',
       position: 'absolute',
-      top: '63%',
-      left: '3%',
+      top: '26%',
+      right: '10%',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
       '&.MuiTypography-root': {
          fontFamily: 'Montserrat, sans-serif',
          fontSize: 14,
@@ -428,29 +529,29 @@ export default makeStyles(theme => ({
          fontWeight: 'bold',
          letterSpacing: 2,
       },
-      animation: '$type2Effect 2.6s ease-in-out',
-      transition: 'visibility 0s linear 2s',
+      animation: '$type2Effect 1.3s ease-in-out',
+      // transition: 'visibility 0s linear 1s',
    },
    type2Out: {
       visibility: 'hidden',
-      animation: '$type2OutEffect 2s ease-in-out',
+      animation: '$type2OutEffect 1s ease-in-out',
    },
    '@keyframes type2Effect': {
       '0%': {
          opacity: 0,
-         left: '-50%',
+         right: '50%',
       },
       '60%': {
          opacity: 1,
       },
       '100%': {
-         left: '3%',
+         right: '10%',
       },
    },
    '@keyframes type2OutEffect': {
       '0%': {
          opacity: 1,
-         left: '3%',
+         left: '8%',
       },
       '60%': {
          opacity: 0,

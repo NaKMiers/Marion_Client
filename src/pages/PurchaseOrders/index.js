@@ -1,4 +1,5 @@
-import { Box, Tab, Tabs } from '@mui/material'
+import InfoIcon from '@mui/icons-material/Info'
+import { Box, Tab, Tabs, Typography } from '@mui/material'
 import clsx from 'clsx'
 import { memo, useState } from 'react'
 import PageTitle from '../../components/PageTitle'
@@ -37,6 +38,16 @@ function PurchaseOrderPage() {
                <PurchaseProduct />
                <PurchaseProduct />
                <PurchaseProduct />
+            </Box>
+            <Box className={styles.emptyWishlistWrap}>
+               <Box className={styles.emptyWishlist}>
+                  <Box className={styles.emptyWishlistIconStroke}>
+                     <InfoIcon className={styles.emptyWishlistIcon} />
+                  </Box>
+                  <Typography className={styles.emptyText}>
+                     Your purchase orders is currently empty.
+                  </Typography>
+               </Box>
             </Box>
          </Box>
       </Box>

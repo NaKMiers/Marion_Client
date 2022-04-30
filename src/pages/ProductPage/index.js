@@ -185,7 +185,6 @@ function ProductPage() {
                      <Button className={clsx(styles.addToCartBtn, styles.addToCartBtn1)}>
                         ADD TO CARD
                      </Button>
-                     SS
                      <IconButton className={styles.favBtn}>
                         <FavoriteBorderIcon className={styles.favIcon} />
                         {/* <FavoriteIcon className={styles.favIcon} /> */}
