@@ -5,6 +5,7 @@ import { memo, useState } from 'react'
 import Notify from '../../components/Notify'
 import PageTitle from '../../components/PageTitle'
 import useStyles from './styles'
+import { notifyContents } from '../../constants/dataSample'
 
 function NotificationPage() {
    const [isReaded, setReaded] = useState(false)
@@ -31,7 +32,9 @@ function NotificationPage() {
                   />
                </Box>
 
-               <Notify />
+               <Notify image='images/notifyAvt1.png' content={notifyContents[0]} />
+               <Notify image='images/notifyAvt2.png' content={notifyContents[1]} />
+               <Notify image='images/notifyAvt3.png' content={notifyContents[2]} />
             </List>
          </Box>
       </Box>

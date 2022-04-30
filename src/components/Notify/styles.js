@@ -8,7 +8,7 @@ export default makeStyles(theme => ({
 
    notifyThumbHeader: {
       '&.MuiCardMedia-root': {
-         width: 'auto',
+         width: '60px',
       },
       width: 60,
       height: 60,

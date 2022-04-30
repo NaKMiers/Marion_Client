@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem'
 import { memo } from 'react'
 import useStyles from './styles'
 
-function Notify({ inHeader, handleCloseNotify }) {
+function Notify({ inHeader, handleCloseNotify, content }) {
    const styles = useStyles()
 
    return inHeader ? (
@@ -12,14 +12,12 @@ function Notify({ inHeader, handleCloseNotify }) {
          <CardMedia
             className={styles.notifyThumbHeader}
             component='img'
-            image='https://bom.so/EKb8Yx'
+            image={content.image}
             alt='thumb'
          />
          <Box className={styles.notifyContentHeader}>
-            <Typography className={styles.notifyTitleHeader}>
-               Notify 1awdawdawdawdawdawdawdawdawdawdawdawdawdawd
-            </Typography>
-            <Typography className={styles.notifyDescHeader}>Description 1</Typography>
+            <Typography className={styles.notifyTitleHeader}>{content.title}</Typography>
+            <Typography className={styles.notifyDescHeader}>{content.description}</Typography>
          </Box>
       </MenuItem>
    ) : (
@@ -27,17 +25,14 @@ function Notify({ inHeader, handleCloseNotify }) {
          <Box className={styles.notifyThumbWrap}>
             <CardMedia
                alt='thumb'
-               image='https://bom.so/EKb8Yx'
+               image={content.image}
                component='img'
                className={styles.notifyThumb}
             />
          </Box>
          <Box className={styles.notifyContent}>
-            <Typography className={styles.notifyTitle}>Summer BBQ</Typography>
-            <Typography className={styles.notifyDesc}>
-               Wish I could come, but I'm out of town this Wish I could come, but I'm out Wish I
-               could come, but I'm out of town this of town this
-            </Typography>
+            <Typography className={styles.notifyTitle}>{content.title}</Typography>
+            <Typography className={styles.notifyDesc}>{content.description}</Typography>
          </Box>
          <Box className={styles.removeBtn}>
             <ClearIcon className={styles.removeIcon} />

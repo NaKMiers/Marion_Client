@@ -35,6 +35,7 @@ import { memo, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Notify from '../Notify'
 import useStyles from './styles'
+import { notifyContents } from '../../constants/dataSample'
 
 function Header() {
    const [isShowNavModal, setShowNavModal] = useState(false)
@@ -120,13 +121,13 @@ function Header() {
                      className={styles.notificationDialog}
                      style={{ top: scrollPosition === 0 ? 10 : 12 }}
                   >
-                     <Notify inHeader />
-                     <Notify inHeader />
-                     <Notify inHeader />
+                     <Notify inHeader content={notifyContents[0]} />
+                     <Notify inHeader content={notifyContents[1]} />
+                     <Notify inHeader content={notifyContents[2]} />
                   </Menu>
 
                   <IconButton className={styles.iconAvtBtn} onClick={handleMenuAvt}>
-                     <Avatar className={styles.avatar} alt='avatar' src='https://bom.so/EKb8Yx' />
+                     <Avatar className={styles.avatar} alt='avatar' src='/images/avt.jpg' />
                   </IconButton>
                   <Menu
                      anchorEl={anchorElAvt}
@@ -134,11 +135,11 @@ function Header() {
                      onClose={handleCloseAvt}
                      style={{ top: scrollPosition === 0 ? 10 : 12 }}
                   >
-                     <MenuItem onClick={handleCloseAvt}>
+                     {/* <MenuItem onClick={handleCloseAvt}>
                         <Link to='/my-account' className={styles.link} onClick={handleShowNav}>
                            My Account
                         </Link>
-                     </MenuItem>
+                     </MenuItem> */}
                      <MenuItem onClick={handleCloseAvt}>
                         <Link to='/purchase-orders' className={styles.link}>
                            Purchase Order
@@ -157,6 +158,8 @@ function Header() {
                      <MenuIcon className={styles.menuIcon} />
                   </IconButton>
                </Box>
+
+               {/* Nav Modal For Mobile */}
 
                <Box className={clsx(styles.navModal, { [styles.navModalActive]: isShowNavModal })}>
                   <Box className={styles.navWrap}>
@@ -179,7 +182,7 @@ function Header() {
                         <List className={styles.navList}>
                            <ListItemButton onClick={handleisOpenMenu}>
                               <ListItemAvatar>
-                                 <Avatar alt='avt' src='https://bom.so/PFCAqg' />
+                                 <Avatar alt='avt' src='/images/avt.jpg' />
                               </ListItemAvatar>
                               <ListItemText primary='nakmiers' />
                               {isOpenMenu ? <ExpandLess /> : <ExpandMore />}
