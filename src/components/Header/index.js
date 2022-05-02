@@ -189,7 +189,7 @@ function Header() {
                            </ListItemButton>
                            <Collapse in={isOpenMenu} timeout='auto' unmountOnExit>
                               <List component='div' disablePadding>
-                                 <Link
+                                 {/* <Link
                                     to='/my-account'
                                     className={styles.link}
                                     onClick={handleShowNav}
@@ -197,7 +197,7 @@ function Header() {
                                     <ListItemButton className={styles.collapseItem}>
                                        <ListItemText primary='My Account' />
                                     </ListItemButton>
-                                 </Link>
+                                 </Link> */}
 
                                  <Link
                                     to='/purchase-order'
